@@ -1,11 +1,33 @@
 ---
 params:
-    # either rse, prjmgr, dbadmin, dmgr
-    - position: prjmgr
+    # either rse, pm, dba, dm
+    position: pm
+    position_title: "project manager"
 output: md_document
 ---
 
-# Job description for a POSITION
+```{r generate-job-ads, eval=FALSE, include=FALSE}
+library(tidyverse)
+library(fs)
+position <- c(
+    rse = "research software engineer",
+    # Or team lead or other name?
+    pm = "project manager",
+    dba = "database administrator"
+)
+walk2(
+    names(position),
+    position,
+    ~ rmarkdown::render(
+        input = here::here("hiring/dif-project/_shared.Rmd"),
+        output_file = here::here("hiring/dif-project/", 
+                                 path_ext_set(str_replace_all(.y, " ", "-"), ".md")),
+        params = list(position = .x, position_title = .y)
+    ) 
+)
+```
+
+# Job description for `r position`
 
 <!--
 Some resources for writing job descriptions:
@@ -51,17 +73,48 @@ improved upon.
 Minimally Valuable Products for early external testing and refining.
 - Writing public-facing, *beginner-friendly*, and accessible documentation on
 contributing to and using the Framework.
+- Creating and maintaining websites connected to the Framework (e.g. through
+GitHub Pages).
 
 All team members' **secondary responsibilities**:
 
 - Contributing to tasks and projects related to the general administration or
 building up of SDCA (e.g. writing and/or updating onboarding documentation).
-- Creating and maintaining websites connected to the Framework (e.g. through
-GitHub Pages).
 - Assisting with building up general capacity and skills in
-reproducibility/transparency of research data analyses throughout SDCA
+reproducibility/transparency of research data analyses throughout SDCA.
+- Creating and running training sessions related to the Framework and to general
+computational skills.
 
-insert job specific requirements
+Responsibilities **specific to this position** also include:
+
+```{asis, echo=params$position == "rse"}
+- Building and interacting with RESTful APIs (or APIs in general)
+- Reviewing contributed code and text.
+* Assisting with or developing tools for improving analysis and workflow pipelines (e.g. making R packages and scripts)
+```
+
+```{asis, echo=params$position == "pm"}
+- Planning, coordinating, and if necessary revising the tasks required to
+complete the Framework.
+- Tracking milestones and managing issues that arise such that work on the
+Framework continues as smoothly as possible.
+- Reviewing contributed code and text, accepting changes made.
+- Facilitating, communicating, and coordinating with the team members on completing
+the project tasks.
+```
+
+```{asis, echo=params$position == "dba"}
+- Database management/administration
+* Manage server and data
+* Providing continued support for running projects with Statistics Denmark
+```
+
+```{asis, echo=params$position == "dm"}
+- Database management/administration
+* Manage server and data
+- Work with DD2 project
+- Experience in the Danish research computing environments, e.g., "forskermaskine" (research engine on Denmark Statistics (DST))
+```
 
 ## Qualifications and experiences
 
@@ -80,14 +133,50 @@ Other **optional, bonus** qualifications and experiences include that you have:
 - Interest in or motivation to be involved in aspects of building up and
 developing the culture and infrastructure of a newer organization.
 
-insert job specific qualifications
+Qualifications and experience **specific to this position** also include:
+
+```{asis, echo=params$position == "rse"}
+- Can develop software packages in either R or Python that abides by accepted
+standard practices (e.g. CRAN or rOpenSci guidelines for R packages).
+- Experienced or familiar with using R and/or Python for general programming tasks.
+
+**Optional** (also can learn while on the job):
+
+- Experience in or familiar with using HTML, CSS, and other web technologies.
+- Familiar with general User Interface (UI) and/or User Experience (UX) design principles.
+- Experience in or familiar with interacting with and/or developing APIs.
+
+- (There is some overlap between software and data engineering, so some familiarity with
+both is necessary)
+```
+
+```{asis, echo=params$position == "pm"}
+```
+
+```{asis, echo=params$position == "dba"}
+* Data management experience
+- Using Git and GitHub/GitLab
+- Database management/administration
+- Familiar with creating training material and teaching
+- Experience in working on open source projects and with FAIR principles
+
+- **CSV, SQL, and JSON format for data storage:** Are open source and established formats for data and other web information.
+    - JSON (JavaScript Object Notation) is the Internet’s de facto standard format for information transfer.
+    - CSV is well known to researchers.
+    - SQL (a querying language and data storage format) is a widely used format for storing data.
+```
+
+```{asis, echo=params$position == "dm"}
+* Write up documentation and provide support for working with Statistics Denmark projects
+```
 
 ## Other job expectations and details
 
 - The position can (depending on where applicant lives) largely be remote / work from home.
     - If you live or move to Aarhus for the position, we'd prefer that you come
     into the office once or twice a week.
-    - If you live outside of Denmark, expect to participate in occasional in person meetings (covered by SDCA)
+    - If you live outside of Denmark, we expect (and will cover) for you to
+    participate in occasional in person meetings (e.g. our annual research day).
 - We don't expect you to have all the skills for the position and part of the
 job is learning these skills. In process of learning them, we encourage you to
 create training docs as you learn so knowledge and skills can be shared.
