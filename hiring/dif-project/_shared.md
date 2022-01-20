@@ -1,3 +1,20 @@
+---
+params:
+    # either rse, prjmgr, dbadmin, dmgr
+    - position: prjmgr
+output: md_document
+---
+
+# Job description for a POSITION
+
+<!--
+Some resources for writing job descriptions:
+
+- http://www.fortefoundation.org/site/DocServer/gendered_wording_JPSP.pdf?docID=16121
+- https://www.linkedin.com/business/talent/blog/talent-acquisition/must-dos-for-writing-inclusive-job-descriptions
+- https://harver.com/blog/inclusive-job-descriptions/
+-->
+
 The Steno Diabetes Center Aarhus (SDCA; https://www.stenoaarhus.dk/) is hiring
 a team to work on a recently funded software and data project. This project
 aims to build an open and scalable infrastructure Framework for working with,
@@ -20,10 +37,65 @@ this current job position, as well as the rest of the team, include contributing
 to this (explicit and inclusive) culture, for instance by adding to our Common
 Docs (https://steno-aarhus.github.io/research/).
 
-<!--
-Some resources for writing job descriptions:
+## Responsibilities and tasks
 
-- http://www.fortefoundation.org/site/DocServer/gendered_wording_JPSP.pdf?docID=16121
-- https://www.linkedin.com/business/talent/blog/talent-acquisition/must-dos-for-writing-inclusive-job-descriptions
-- https://harver.com/blog/inclusive-job-descriptions/
--->
+The **primary** responsibility for all members of the Framework team will be
+building and developing the newly started Framework project. More specifically,
+tasks you will do include:
+
+- Refining, critiquing, and improving on the schematic and details of the
+Framework's final implementation and structure.
+- Finding and reviewing similar projects to identify what to use and what can be
+improved upon.
+- Building, internal testing, and developing each component of the Framework into
+Minimally Valuable Products for early external testing and refining.
+- Writing public-facing, *beginner-friendly*, and accessible documentation on
+contributing to and using the Framework.
+
+All team members' **secondary responsibilities**:
+
+- Contributing to tasks and projects related to the general administration or
+building up of SDCA (e.g. writing and/or updating onboarding documentation).
+- Creating and maintaining websites connected to the Framework (e.g. through
+GitHub Pages).
+- Assisting with building up general capacity and skills in
+reproducibility/transparency of research data analyses throughout SDCA
+
+insert job specific requirements
+
+## Qualifications and experiences
+
+All team members' should have at a minimum these **required** qualifications 
+and experiences:
+
+- Has worked on, started, or contributed to open source projects on open sharing
+and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab).
+- Has used Git or other version control software on a fairly regular basis for
+projects.
+- Is proficient in communicating (written and oral) in English.
+
+Other **optional, bonus** qualifications and experiences include that you have:
+
+- Knowledge of and familiarity with general software development practices.
+- Interest in or motivation to be involved in aspects of building up and
+developing the culture and infrastructure of a newer organization.
+
+insert job specific qualifications
+
+## Other job expectations and details
+
+- The position can (depending on where applicant lives) largely be remote / work from home.
+    - If you live or move to Aarhus for the position, we'd prefer that you come
+    into the office once or twice a week.
+    - If you live outside of Denmark, expect to participate in occasional in person meetings (covered by SDCA)
+- We don't expect you to have all the skills for the position and part of the
+job is learning these skills. In process of learning them, we encourage you to
+create training docs as you learn so knowledge and skills can be shared.
+- **Benefits**:
+    - Childcare, parental leave
+    - Very flexible working hours
+    - Others?
+- **Contact details** if you have any specific questions about the position: (who? all of us?)
+- Other details:
+    - Supplement for buying necessary computing equipment?
+    - Covering for in person interviews?
