@@ -30,7 +30,7 @@ walk2(
 ```
 
 ```{asis}
-<!-- WARNING: Don't edit this file, edit the `_template.Rmd` file. -->
+> **WARNING: Don't edit this file, edit the `_template.Rmd` file.**
 ```
 
 # Job description for `r position`
