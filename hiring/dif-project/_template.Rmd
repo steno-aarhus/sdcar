@@ -7,24 +7,30 @@ output: md_document
 ---
 
 ```{r generate-job-ads, eval=FALSE, include=FALSE}
+# this creates the descriptions for each of the positions.
 library(tidyverse)
 library(fs)
 position <- c(
     rse = "research software engineer",
     # Or team lead or other name?
     pm = "project manager",
-    dba = "database administrator"
+    dba = "database administrator",
+    dm = "data manager"
 )
 walk2(
     names(position),
     position,
     ~ rmarkdown::render(
-        input = here::here("hiring/dif-project/_shared.Rmd"),
+        input = here::here("hiring/dif-project/_template.Rmd"),
         output_file = here::here("hiring/dif-project/", 
                                  path_ext_set(str_replace_all(.y, " ", "-"), ".md")),
         params = list(position = .x, position_title = .y)
     ) 
 )
+```
+
+```{asis}
+<!-- WARNING: Don't edit this file, edit the `_template.Rmd` file. -->
 ```
 
 # Job description for `r position`
@@ -90,7 +96,8 @@ Responsibilities **specific to this position** also include:
 ```{asis, echo=params$position == "rse"}
 - Building and interacting with RESTful APIs (or APIs in general)
 - Reviewing contributed code and text.
-* Assisting with or developing tools for improving analysis and workflow pipelines (e.g. making R packages and scripts)
+- Assisting with or developing tools for improving analysis and workflow
+pipelines (e.g. making R packages and scripts)
 ```
 
 ```{asis, echo=params$position == "pm"}
@@ -105,15 +112,16 @@ the project tasks.
 
 ```{asis, echo=params$position == "dba"}
 - Database management/administration
-* Manage server and data
-* Providing continued support for running projects with Statistics Denmark
+- Manage server and data
+- Providing continued support for running projects with Statistics Denmark
 ```
 
 ```{asis, echo=params$position == "dm"}
 - Database management/administration
-* Manage server and data
+- Manage server and data
 - Work with DD2 project
-- Experience in the Danish research computing environments, e.g., "forskermaskine" (research engine on Denmark Statistics (DST))
+- Experience in the Danish research computing environments, e.g.,
+"forskermaskine" (research engine on Denmark Statistics (DST))
 ```
 
 ## Qualifications and experiences
@@ -140,34 +148,26 @@ Qualifications and experience **specific to this position** also include:
 standard practices (e.g. CRAN or rOpenSci guidelines for R packages).
 - Experienced or familiar with using R and/or Python for general programming tasks.
 
-**Optional** (also can learn while on the job):
+**Optional** for this position:
 
 - Experience in or familiar with using HTML, CSS, and other web technologies.
 - Familiar with general User Interface (UI) and/or User Experience (UX) design principles.
 - Experience in or familiar with interacting with and/or developing APIs.
-
-- (There is some overlap between software and data engineering, so some familiarity with
-both is necessary)
+- Familiarity with general data engineering practices
 ```
 
 ```{asis, echo=params$position == "pm"}
 ```
 
 ```{asis, echo=params$position == "dba"}
-* Data management experience
-- Using Git and GitHub/GitLab
-- Database management/administration
-- Familiar with creating training material and teaching
-- Experience in working on open source projects and with FAIR principles
-
-- **CSV, SQL, and JSON format for data storage:** Are open source and established formats for data and other web information.
-    - JSON (JavaScript Object Notation) is the Internet’s de facto standard format for information transfer.
-    - CSV is well known to researchers.
-    - SQL (a querying language and data storage format) is a widely used format for storing data.
+- Database management/administration.
+- Experience working with CSV and JSON data storage formats.
+- Experience interacting with and building SQL databases.
 ```
 
 ```{asis, echo=params$position == "dm"}
-* Write up documentation and provide support for working with Statistics Denmark projects
+- Write up documentation and provide support for working with Statistics Denmark
+projects
 ```
 
 ## Other job expectations and details
