@@ -71,16 +71,16 @@ The **primary** responsibility for all members of the Framework team will be
 building and developing the newly started Framework project. More specifically,
 tasks you will do include:
 
-- Refining, critiquing, and improving on the schematic and details of the
-Framework's final implementation and structure.
+- Refining, critiquing, and improving on the descriptions of the use-cases and 
+the design and architecture of the Framework
 - Finding and reviewing similar projects to identify what to use and what can be
-improved upon.
+improved upon
 - Building, internal testing, and developing each component of the Framework into
-Minimally Valuable Products for early external testing and refining.
+Minimally Valuable Products for early external testing and refining
 - Writing public-facing, *beginner-friendly*, and accessible documentation on
-contributing to and using the Framework.
+contributing to and using the Framework
 - Creating and maintaining websites connected to the Framework (e.g. through
-GitHub Pages).
+GitHub Pages)
 
 All team members' **secondary responsibilities**:
 
@@ -89,31 +89,32 @@ building up of SDCA (e.g. writing and/or updating onboarding documentation).
 - Assisting with building up general capacity and skills in
 reproducibility/transparency of research data analyses throughout SDCA.
 - Creating and running training sessions related to the Framework and to general
-computational skills.
+computational (what do you mean by computational?) skills.
 
 Responsibilities **specific to this position** also include:
 
 ```{asis, echo=params$position == "rse"}
 - Building and interacting with RESTful APIs (or APIs in general)
-- Reviewing contributed code and text.
+- Reviewing contributed code and text (do you mean documentation and educational material?)
 - Assisting with or developing tools for improving analysis and workflow
 pipelines (e.g. making R packages and scripts)
 ```
 
 ```{asis, echo=params$position == "pm"}
 - Planning, coordinating, and if necessary revising the tasks required to
-complete the Framework.
+complete the Framework
 - Tracking milestones and managing issues that arise such that work on the
-Framework continues as smoothly as possible.
-- Reviewing contributed code and text, accepting changes made.
+Framework continues as smoothly as possible
+- Reviewing contributed code (project manager reviews code?) and text (ambiguous), accepting changes made.
 - Facilitating, communicating, and coordinating with the team members on completing
-the project tasks.
+the project tasks
 ```
 
 ```{asis, echo=params$position == "dba"}
 - Database management/administration
 - Manage server and data
-- Providing continued support for running projects with Statistics Denmark
+- Providing continued support for running projects with "Forskermaskine" 
+(research engine on Statistics Denmark or Sundhedsdatastyrelsen)
 ```
 
 ```{asis, echo=params$position == "dm"}
@@ -121,7 +122,7 @@ the project tasks.
 - Manage server and data
 - Work with DD2 project
 - Experience in the Danish research computing environments, e.g.,
-"forskermaskine" (research engine on Denmark Statistics (DST))
+"Forskermaskine" (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
 ```
 
 ## Qualifications and experiences
@@ -133,26 +134,26 @@ and experiences:
 and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab).
 - Has used Git or other version control software on a fairly regular basis for
 projects.
-- Is proficient in communicating (written and oral) in English.
+- Is proficient in communicating (written and oral) in English
 
 Other **optional, bonus** qualifications and experiences include that you have:
 
 - Knowledge of and familiarity with general software development practices.
 - Interest in or motivation to be involved in aspects of building up and
-developing the culture and infrastructure of a newer organization.
+developing the culture and infrastructure of a newer organization
 
 Qualifications and experience **specific to this position** also include:
 
 ```{asis, echo=params$position == "rse"}
-- Can develop software packages in either R or Python that abides by accepted
-standard practices (e.g. CRAN or rOpenSci guidelines for R packages).
-- Experienced or familiar with using R and/or Python for general programming tasks.
+- Experienced or familiar with using Python and R for general programming tasks.
+- Can develop software packages in Python and R that abides by accepted
+standard practices (e.g. PIP, CRAN or rOpenSci guidelines for R packages)
 
 **Optional** for this position:
 
 - Experience in or familiar with using HTML, CSS, and other web technologies.
-- Familiar with general User Interface (UI) and/or User Experience (UX) design principles.
-- Experience in or familiar with interacting with and/or developing APIs.
+- Familiar with general User Interface (UI) and/or User Experience (UX) design principles
+- Experience in or familiar with interacting with and/or developing APIs
 - Familiarity with general data engineering practices
 ```
 
@@ -160,26 +161,26 @@ standard practices (e.g. CRAN or rOpenSci guidelines for R packages).
 ```
 
 ```{asis, echo=params$position == "dba"}
-- Database management/administration.
-- Experience working with CSV and JSON data storage formats.
-- Experience interacting with and building SQL databases.
+- Database management/administration
+- Experience working with CSV and JSON data storage formats
+- Experience interacting with and building SQL databases
 ```
 
 ```{asis, echo=params$position == "dm"}
-- Write up documentation and provide support for working with Statistics Denmark
-projects
+- Write up documentation and provide support for working with "Forskermaskine" 
+(research engine on Statistics Denmark or Sundhedsdatastyrelsen) projects
 ```
 
 ## Other job expectations and details
 
 - The position can (depending on where applicant lives) largely be remote / work from home.
     - If you live or move to Aarhus for the position, we'd prefer that you come
-    into the office once or twice a week.
+    into the office once or twice a week
     - If you live outside of Denmark, we expect (and will cover) for you to
-    participate in occasional in person meetings (e.g. our annual research day).
+    participate in occasional in person meetings (e.g. our annual research retreat)
 - We don't expect you to have all the skills for the position and part of the
 job is learning these skills. In process of learning them, we encourage you to
-create training docs as you learn so knowledge and skills can be shared.
+create training docs as you learn so knowledge and skills can be shared
 - **Benefits**:
     - Childcare, parental leave
     - Very flexible working hours
