@@ -17,14 +17,14 @@ position <- c(
     dba = "database administrator",
     dm = "data manager"
 )
-walk2(
-    names(position),
+
+iwalk(
     position,
     ~ rmarkdown::render(
         input = here::here("hiring/dif-project/_template.Rmd"),
         output_file = here::here("hiring/dif-project/", 
-                                 path_ext_set(str_replace_all(.y, " ", "-"), ".md")),
-        params = list(position = .x, position_title = .y)
+                                 path_ext_set(str_replace_all(.x, " ", "-"), ".md")),
+        params = list(position = .y, position_title = .x)
     ) 
 )
 ```
@@ -33,7 +33,7 @@ walk2(
 > **WARNING: Don't edit this file, edit the `_template.Rmd` file.**
 ```
 
-# Job description for `r position`
+# Job description for `r params$position_title`
 
 <!--
 Some resources for writing job descriptions:
@@ -45,84 +45,92 @@ Some resources for writing job descriptions:
 
 The Steno Diabetes Center Aarhus (SDCA; https://www.stenoaarhus.dk/) is hiring
 a team to work on a recently funded software and data project. This project
-aims to build an open and scalable infrastructure Framework for working with,
+aims to build an open and scalable data infrastructure framework (DIF) for working with,
 discovering, and managing data that follows FAIR and open science principles.
-A full description of the Framework project can be found at 
+A full description of the DIF project can be found at 
 https://steno-aarhus.github.io/dif-project/.
 
 SDCA is a center that brings together researchers and clinicians in an aim to
 better integrate work on multiple aspects of diabetes treatment, research, and
-education. The Framework project will be largely contributing to the research of
+education. The DIF project will be largely contributing to the research of
 the center (https://www.stenoaarhus.dk/research/) as well as that of other
 research centers and initiatives throughout Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
-personnel, including this current job along with the Framework team, have a
+personnel, including this current job along with the DIF team, have a
 direct and impactful influence on how the culture and infrastructure is built
-and developed. Aside from working on the Framework, other responsibilities for
-this current job position, as well as the rest of the team, include contributing
+and developed. Aside from working on the DIF, other responsibilities for
+the `r params$position_title`, as well as the rest of the team, include contributing
 to this (explicit and inclusive) culture, for instance by adding to our Common
 Docs (https://steno-aarhus.github.io/research/).
 
 ## Responsibilities and tasks
 
-The **primary** responsibility for all members of the Framework team will be
-building and developing the newly started Framework project. More specifically,
+The **primary** responsibility for all members of the DIF team will be
+building and developing the newly started DIF project. More specifically,
 tasks you will do include:
 
 - Refining, critiquing, and improving on the descriptions of the use-cases and 
-the design and architecture of the Framework
+the design and architecture of the DIF
 - Finding and reviewing similar projects to identify what to use and what can be
 improved upon
-- Building, internal testing, and developing each component of the Framework into
+- Building, internal testing, and developing each component of the DIF into
 Minimally Valuable Products for early external testing and refining
 - Writing public-facing, *beginner-friendly*, and accessible documentation on
-contributing to and using the Framework
-- Creating and maintaining websites connected to the Framework (e.g. through
+contributing to and using the DIF
+- Creating and maintaining websites connected to the DIF (e.g. through
 GitHub Pages)
 
 All team members' **secondary responsibilities**:
 
 - Contributing to tasks and projects related to the general administration or
-building up of SDCA (e.g. writing and/or updating onboarding documentation).
+building up of SDCA (e.g. writing and/or updating onboarding documentation)
 - Assisting with building up general capacity and skills in
-reproducibility/transparency of research data analyses throughout SDCA.
-- Creating and running training sessions related to the Framework and to general
-computational (what do you mean by computational?) skills.
+reproducibility/transparency of research data analyses throughout SDCA
+- Creating and running training sessions related to the DIF and to general
+computational analysis skills
 
-Responsibilities **specific to this position** also include:
+Responsibilities **specific to the `r params$position_title`** also include:
 
 ```{asis, echo=params$position == "rse"}
 - Building and interacting with RESTful APIs (or APIs in general)
-- Reviewing contributed code and text (do you mean documentation and educational material?)
+- Reviewing contributed code and documentation text
 - Assisting with or developing tools for improving analysis and workflow
-pipelines (e.g. making R packages and scripts)
+pipelines (e.g. making Python/R packages and scripts)
 ```
 
 ```{asis, echo=params$position == "pm"}
 - Planning, coordinating, and if necessary revising the tasks required to
-complete the Framework
-- Tracking milestones and managing issues that arise such that work on the
-Framework continues as smoothly as possible
-- Reviewing contributed code (project manager reviews code?) and text (ambiguous), accepting changes made.
-- Facilitating, communicating, and coordinating with the team members on completing
-the project tasks
+complete the DIF project
+- Tracking milestones and managing issues that may arise so that work on the DIF
+project continues as smoothly as possible
+- Creating a welcoming and collaborative environments
+- Reviewing contributed code and documentation text, accepting changes made
+- Facilitating, communicating, and coordinating with the team members on
+completing the DIF project tasks
 ```
 
 ```{asis, echo=params$position == "dba"}
-- Database management/administration
-- Manage server and data
-- Providing continued support for running projects with "Forskermaskine" 
-(research engine on Statistics Denmark or Sundhedsdatastyrelsen)
+- Building up the core architecture of the DIF SQL database (e.g. as a data warehouse)
+- Developing interfaces between the end users and the SQL database
+- Tracking and managing how the DIF project may use server resources
+
+Additional tasks may also include:
+
+- Providing support for running projects with "Forskermaskine" (research engine
+on Statistics Denmark or Sundhedsdatastyrelsen)
+- Communicating with Statistics Denmark to refine how the DIF project may be
+implemented
 ```
 
 ```{asis, echo=params$position == "dm"}
-- Database management/administration
-- Manage server and data
-- Work with DD2 project
-- Experience in the Danish research computing environments, e.g.,
-"Forskermaskine" (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
+- Map out the various DD2 sources of data, documentation, and resources, and plan 
+out steps to implement the DIF project
+- Write up documentation and provide support for working with "Forskermaskine" 
+(research engine on Statistics Denmark or Sundhedsdatastyrelsen) projects
+- Act as liaison between the various DD2 centers and the DIF team, including
+to coordinate and manage implementing the DIF project
 ```
 
 ## Qualifications and experiences
@@ -131,25 +139,26 @@ All team members' should have at a minimum these **required** qualifications
 and experiences:
 
 - Has worked on, started, or contributed to open source projects on open sharing
-and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab).
+and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab)
 - Has used Git or other version control software on a fairly regular basis for
-projects.
+projects
 - Is proficient in communicating (written and oral) in English
 
 Other **optional, bonus** qualifications and experiences include that you have:
 
-- Knowledge of and familiarity with general software development practices.
+- Knowledge of and familiarity with general software development practices
 - Interest in or motivation to be involved in aspects of building up and
 developing the culture and infrastructure of a newer organization
 
-Qualifications and experience **specific to this position** also include:
+Qualifications and experience **specific to the `r params$position_title`** also include:
 
 ```{asis, echo=params$position == "rse"}
-- Experienced or familiar with using Python and R for general programming tasks.
-- Can develop software packages in Python and R that abides by accepted
-standard practices (e.g. PIP, CRAN or rOpenSci guidelines for R packages)
+- Experienced or familiar with either using Python or R for general programming
+tasks (should be open to learning both)
+- Can develop software packages in Python or R that abides by accepted
+standard practices (e.g. PIP or CRAN)
 
-**Optional** for this position:
+**Optional** for this research software engineer:
 
 - Experience in or familiar with using HTML, CSS, and other web technologies.
 - Familiar with general User Interface (UI) and/or User Experience (UX) design principles
@@ -158,26 +167,32 @@ standard practices (e.g. PIP, CRAN or rOpenSci guidelines for R packages)
 ```
 
 ```{asis, echo=params$position == "pm"}
+- Experience in managing and coordinating projects and people
+- Knowledge of or experience in using R and/or Python for scientific data
+analysis and/or research software development
 ```
 
 ```{asis, echo=params$position == "dba"}
-- Database management/administration
-- Experience working with CSV and JSON data storage formats
-- Experience interacting with and building SQL databases
+- Knowledge of and experience in database management, development, and
+administration
+- Familiar with using and interacting with CSV and JSON data storage formats
+- Experience interacting with and building SQL databases and queries
 ```
 
 ```{asis, echo=params$position == "dm"}
-- Write up documentation and provide support for working with "Forskermaskine" 
-(research engine on Statistics Denmark or Sundhedsdatastyrelsen) projects
+- Familiar with the DD2 project, database, and procedures (TODO: Include?)
+- Experience in the Danish research computing environments, e.g.,
+"Forskermaskine" (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
 ```
 
-## Other job expectations and details
+## Other details and job expectations
 
 - The position can (depending on where applicant lives) largely be remote / work from home.
     - If you live or move to Aarhus for the position, we'd prefer that you come
     into the office once or twice a week
     - If you live outside of Denmark, we expect (and will cover) for you to
-    participate in occasional in person meetings (e.g. our annual research retreat)
+    participate in bigger in person meetings/events (e.g. our annual research
+    retreat)
 - We don't expect you to have all the skills for the position and part of the
 job is learning these skills. In process of learning them, we encourage you to
 create training docs as you learn so knowledge and skills can be shared
