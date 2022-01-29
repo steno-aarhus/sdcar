@@ -26,9 +26,9 @@ Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
-personnel, including this current job along with the DIF team, have a
-direct and impactful influence on how the culture and infrastructure is
-built and developed. Aside from working on the DIF, other
+personnel, including this current job and the rest of the DIF team, have
+a direct and impactful influence on how the culture and infrastructure
+is built and developed. Aside from working on the DIF project, other
 responsibilities for the project manager, as well as the rest of the
 team, include contributing to this (explicit and inclusive) culture, for
 instance by adding to our Common Docs
@@ -44,8 +44,8 @@ specifically, tasks you will do include:
     use-cases and the design and architecture of the DIF
 -   Finding and reviewing similar projects to identify what to use and
     what can be improved upon
--   Building, internal testing, and developing each component of the DIF
-    into Minimally Valuable Products for early external testing and
+-   Building, internally testing, and developing each component of the
+    DIF into Minimally Valuable Products for early external testing and
     refining
 -   Writing public-facing, *beginner-friendly*, and accessible
     documentation on contributing to and using the DIF
@@ -63,17 +63,19 @@ All team members’ **secondary responsibilities**:
 -   Creating and running training sessions related to the DIF and to
     general computational analysis skills
 
-Responsibilities **specific to the project manager** also include:
+Responsibilities **specific to the project manager** include:
 
 -   Planning, coordinating, and if necessary revising the tasks required
     to complete the DIF project
 -   Tracking milestones and managing issues that may arise so that work
     on the DIF project continues as smoothly as possible
--   Creating a welcoming and collaborative environments
+-   Creating a welcoming and collaborative environment
 -   Reviewing contributed code and documentation text, accepting changes
     made
 -   Facilitating, communicating, and coordinating with the team members
     on completing the DIF project tasks
+-   Outside of managing the DIF project (which accounts for 50% of the
+    time), you are expected and encouraged to do your own research
 
 ## Qualifications and experiences
 
@@ -90,38 +92,53 @@ qualifications and experiences:
 Other **optional, bonus** qualifications and experiences include that
 you have:
 
--   Knowledge of and familiarity with general software development
+-   Knowledge of and familiarity with *general* software development
     practices
 -   Interest in or motivation to be involved in aspects of building up
     and developing the culture and infrastructure of a newer
     organization
+-   Knowledge of and experience in implementing and adhering to FAIR
+    principles
 
-Qualifications and experience **specific to the project manager** also
+Qualifications and experience **specific to the project manager**
 include:
 
 -   Experience in managing and coordinating projects and people
--   Knowledge of or experience in using R and/or Python for scientific
-    data analysis and/or research software development
+-   Demonstrated knowledge of and experience in using R and/or Python
+    for scientific data analysis and research software development
+-   Knowledge of and proficient in general research practices and
+    working with and managing big data
+-   Demonstrated experience in, actively involved in, and passionate
+    advocate for open scientific practices
+-   Competent in writing beginner-friendly documentation and in
+    developing (and teaching) educational material in data analysis and
+    open science
 
 ## Other details and job expectations
 
--   The position can (depending on where applicant lives) largely be
-    remote / work from home.
+-   The position can (depending on where the applicant lives) be largely
+    remote / work from home
     -   If you live or move to Aarhus for the position, we’d prefer that
-        you come into the office once or twice a week
+        you come into the office twice a week
     -   If you live outside of Denmark, we expect (and will cover) for
         you to participate in bigger in person meetings/events (e.g. our
         annual research retreat)
+    -   *Specific to the project manager position*, for the 50%
+        dedicated work on the DIF project, we expect you to be
+        physically closer to the SDCA, coming in at least twice a week
 -   We don’t expect you to have all the skills for the position and part
-    of the job is learning these skills. In process of learning them, we
-    encourage you to create training docs as you learn so knowledge and
-    skills can be shared
+    of the job is learning these skills. In the process of learning
+    them, we encourage you to create training docs as you learn so
+    knowledge and skills can be shared
 -   **Benefits**:
-    -   Childcare, parental leave
+    -   Childcare, parental leave (? if moving to Denmark)
     -   Very flexible working hours
     -   Others?
--   **Contact details** if you have any specific questions about the
-    position: (who? all of us?)
+    -   Great working environment and colleagues :)
+-   If you have any specific questions about the position, **contact**
+    Annelli Sandbæk (<anesnd@rm.dk>)
 -   Other details:
-    -   Supplement for buying necessary computing equipment?
-    -   Covering for in person interviews?
+    -   Any necessary hardware or software will be provided or covered
+        for.
+    -   Salary is competitive and aligns with agreements between the
+        university and the national unions.
