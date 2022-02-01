@@ -23,7 +23,7 @@ iwalk(
     ~ rmarkdown::render(
         input = here::here("hiring/dif-project/_template.Rmd"),
         output_file = here::here("hiring/dif-project/", 
-                                 path_ext_set(str_replace_all(.x, " ", "-"), ".md")),
+                                 str_replace_all(.x, " ", "-")),
         params = list(position = .y, position_title = .x)
     ) 
 )
