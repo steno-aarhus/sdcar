@@ -14,8 +14,20 @@ The Steno Diabetes Center Aarhus (SDCA; <https://www.stenoaarhus.dk/>)
 is hiring a team to work on a recently funded software and data project.
 This project aims to build an open and scalable data infrastructure
 framework (DIF) for working with, discovering, and managing data that
-follows FAIR and open science principles. A full description of the DIF
-project can be found at <https://steno-aarhus.github.io/dif-project/>.
+follows FAIR and open science principles. This is largely a *software*
+project that focuses on working with data, but not on data itself. A
+description of the DIF project can be found at
+<https://steno-aarhus.github.io/dif-project/>.
+
+The core DIF team will be composed of two full-time research software
+engineers, a data manager, a database administrator, two project
+managers/coordinators, as well as the primary investigator. External and
+occasional collaborators include 2-3 data managers and coordinators as
+well as consultant software engineers.
+
+Because the project is just starting up, the DIF team will be completing
+
+Timeline? Gantt chart link.
 
 SDCA is a center that brings together researchers and clinicians in an
 aim to better integrate work on multiple aspects of diabetes treatment,
@@ -26,19 +38,24 @@ Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
-personnel, including this current job and the rest of the DIF team, have
-a direct and impactful influence on how the culture and infrastructure
-is built and developed. Aside from working on the DIF project, other
-responsibilities for the research software engineer, as well as the rest
-of the team, include contributing to this (explicit and inclusive)
-culture, for instance by adding to our Common Docs
+personnel, including this current position and the rest of the DIF team,
+have a direct and impactful influence on how the culture and
+infrastructure is built and developed. Aside from working on the DIF
+project, other responsibilities for the research software engineer, as
+well as the rest of the team, include contributing to this (explicit and
+inclusive) culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
 ## Responsibilities and tasks
 
+### Team-wide responsibilities
+
 The **primary** responsibility for all members of the DIF team will be
-building and developing the newly started DIF project. More
-specifically, tasks you will do include:
+building and developing the newly started DIF project. For a general
+overview of timelines and tasks, see the Gantt chart in the project
+description
+(<https://steno-aarhus.github.io/dif-project/#deliverables-and-milestones>)
+More specifically, tasks you will do include:
 
 -   Refining, critiquing, and improving on the descriptions of the
     use-cases and the design and architecture of the DIF
@@ -52,7 +69,8 @@ specifically, tasks you will do include:
 -   Creating and maintaining websites connected to the DIF (e.g. through
     GitHub Pages)
 
-All team members’ **secondary responsibilities**:
+All team members’ *secondary* responsibilities (dependent on time
+available outside of the DIF project):
 
 -   Contributing to tasks and projects related to the general
     administration or building up of SDCA (e.g. writing and/or updating
@@ -63,22 +81,29 @@ All team members’ **secondary responsibilities**:
 -   Creating and running training sessions related to the DIF and to
     general computational analysis skills
 
-Responsibilities **specific to the research software engineer** include:
+*Note*, while the team as a whole will need to complete these tasks, any
+individual member of the team *does not* need to do all these tasks and
+instead will be assigned specific sections of the project.
+
+### research software engineer responsibilities
 
 -   Building and developing RESTful APIs (or APIs in general) for the
     DIF
 -   Reviewing contributed code and documentation text
 -   Assisting with or developing tools for improving analysis and
-    workflow pipelines (e.g. making Python/R packages and scripts)
+    workflow pipelines related to using the DIF (e.g. making Python/R
+    packages and scripts)
 
-*Note*, since we anticipate that work on the DIF project will not take
-up all full-time work, depending on the applicant’s interest, we
-encourage and support the research software engineer to pursue their own
-or collaborate on research outside of the project time. There are many
-opportunities for research, networking, and collaboration within SDCA
-and across Denmark.
+*Note*, we anticipate that work on the DIF project will not take up all
+full-time work, so depending on the applicant’s interest, we encourage
+and support the research software engineer to pursue their own or
+collaborate on research projects outside of the project time. There are
+many opportunities for research, networking, and collaboration within
+SDCA and across Denmark.
 
 ## Qualifications and experiences
+
+### Team-wide qualifications
 
 All team members’ should have at a minimum these **required**
 qualifications and experiences:
@@ -89,9 +114,12 @@ qualifications and experiences:
 -   Has used Git or other version control software on a fairly regular
     basis for projects
 -   Is proficient in communicating (written and oral) in English
+-   Is motivated, interested, and comfortable with working on projects
+    that have recently started and that require contributing to a
+    diversity of tasks typical of the early stages of any initiative
 
-Other **optional, bonus** qualifications and experiences include that
-you have:
+Other *optional, bonus* qualifications and experiences include that you
+have:
 
 -   Knowledge of and familiarity with *general* software development
     practices
@@ -101,12 +129,11 @@ you have:
 -   Knowledge of and experience in implementing and adhering to FAIR
     principles
 
-Qualifications and experience **specific to the research software
-engineer** include:
+### research software engineer qualifications
 
 -   Demonstrated knowledge of and experience in using either Python or R
     for general programming tasks (need to be open to learning both)
--   Can develop software packages in Python or R that abides by
+-   Has developed software packages in Python or R that abides by
     community-accepted standard practices (e.g. PIP or CRAN)
 
 **Optional** for this research software engineer position:
@@ -118,6 +145,8 @@ engineer** include:
 -   Experience in or familiar with interacting with and/or developing
     APIs
 -   Familiarity with general data engineering practices
+-   Has some experience or familiarity with the research environment and
+    its specific set of needs
 
 ## Other details and job expectations
 
@@ -133,9 +162,9 @@ engineer** include:
     them, we encourage you to create training docs as you learn so
     knowledge and skills can be shared
 -   **Benefits**:
-    -   Childcare, parental leave (? if moving to Denmark)
+    -   Childcare, parental leave (dependent on country-specific
+        factors)
     -   Very flexible working hours
-    -   Others?
     -   Great working environment and colleagues :)
 -   If you have any specific questions about the position, **contact**
     Annelli Sandbæk (<anesnd@rm.dk>)
