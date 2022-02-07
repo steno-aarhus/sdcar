@@ -44,11 +44,22 @@ Some resources for writing job descriptions:
 -->
 
 The Steno Diabetes Center Aarhus (SDCA; https://www.stenoaarhus.dk/) is hiring
-a team to work on a recently funded software and data project. This project
-aims to build an open and scalable data infrastructure framework (DIF) for working with,
-discovering, and managing data that follows FAIR and open science principles.
-A full description of the DIF project can be found at 
-https://steno-aarhus.github.io/dif-project/.
+a team to work on a recently funded software and data project. This project aims
+to build an open and scalable data infrastructure framework (DIF) for working
+with, discovering, and managing data that follows FAIR and open science
+principles. A full description of the DIF project can be found at
+https://steno-aarhus.github.io/dif-project/. 
+
+The core DIF team will be composed of two full-time research software engineers,
+a data manager, a database administrator, two project managers/coordinators, as
+well as the primary investigator. Partial collaborators include 2-3 data
+managers and coordinators as well as consultant software engineers.
+
+TODO: Title of Alisa and Annelli?
+
+TODO: Emphasize this is a software project, not data project. 
+
+Timeline? Gantt chart link.
 
 SDCA is a center that brings together researchers and clinicians in an aim to
 better integrate work on multiple aspects of diabetes treatment, research, and
@@ -58,7 +69,7 @@ research centers and initiatives throughout Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
-personnel, including this current job and the rest of the DIF team, have a
+personnel, including this current position and the rest of the DIF team, have a
 direct and impactful influence on how the culture and infrastructure is built
 and developed. Aside from working on the DIF project, other responsibilities for
 the `r params$position_title`, as well as the rest of the team, include contributing
@@ -67,8 +78,11 @@ Docs (https://steno-aarhus.github.io/research/).
 
 ## Responsibilities and tasks
 
+### Team-wide responsibilities
+
 The **primary** responsibility for all members of the DIF team will be
-building and developing the newly started DIF project. More specifically,
+building and developing the newly started DIF project. TODO: Gantt link here?
+More specifically,
 tasks you will do include:
 
 - Refining, critiquing, and improving on the descriptions of the use-cases and 
@@ -82,7 +96,8 @@ contributing to and using the DIF
 - Creating and maintaining websites connected to the DIF (e.g. through
 GitHub Pages)
 
-All team members' **secondary responsibilities**:
+All team members' *secondary* responsibilities (dependent on time available
+outside of the DIF project):
 
 - Contributing to tasks and projects related to the general administration or
 building up of SDCA (e.g. writing and/or updating onboarding documentation)
@@ -91,7 +106,7 @@ reproducibility/transparency of research data analyses throughout SDCA
 - Creating and running training sessions related to the DIF and to general
 computational analysis skills
 
-Responsibilities **specific to the `r params$position_title`** include:
+### `r params$position_title` responsibilities
 
 ```{asis, echo=params$position == "rse"}
 - Building and developing RESTful APIs (or APIs in general) for the DIF
@@ -149,6 +164,8 @@ to coordinate and manage implementing the DIF project
 
 ## Qualifications and experiences
 
+### Team-wide qualifications
+
 All team members' should have at a minimum these **required** qualifications 
 and experiences:
 
@@ -158,14 +175,14 @@ and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab)
 projects
 - Is proficient in communicating (written and oral) in English
 
-Other **optional, bonus** qualifications and experiences include that you have:
+Other *optional, bonus* qualifications and experiences include that you have:
 
 - Knowledge of and familiarity with *general* software development practices
 - Interest in or motivation to be involved in aspects of building up and
 developing the culture and infrastructure of a newer organization
 - Knowledge of and experience in implementing and adhering to FAIR principles
 
-Qualifications and experience **specific to the `r params$position_title`** include:
+### `r params$position_title` qualifications
 
 ```{asis, echo=params$position == "rse"}
 - Demonstrated knowledge of and experience in using either Python or R for
@@ -179,6 +196,11 @@ standard practices (e.g. PIP or CRAN)
 - Familiar with general User Interface (UI) and/or User Experience (UX) design principles
 - Experience in or familiar with interacting with and/or developing APIs
 - Familiarity with general data engineering practices
+
+
+- Prefer to have some experience or familiarity with research and their own needs
+- Comfortable and interested in contributing to many aspects of project (as is typical
+in most startup or research environments)
 ```
 
 ```{asis, echo=params$position == "pm"}
