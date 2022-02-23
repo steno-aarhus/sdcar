@@ -1,8 +1,8 @@
 ---
 params:
-    # either rse, pm, dba, dm
-    position: pm
-    position_title: "project manager"
+    # either rse, tl, dba, dm
+    position: tl
+    position_title: "team leader"
 output: md_document
 ---
 
@@ -13,7 +13,7 @@ library(fs)
 position <- c(
     rse = "research software engineer",
     # Or team lead or other name?
-    pm = "project manager",
+    tl = "team leader",
     dba = "database administrator",
     dm = "data manager"
 )
@@ -33,7 +33,7 @@ iwalk(
 > **WARNING: Don't edit this file, edit the `_template.Rmd` file.**
 ```
 
-# Job description for `r params$position_title`
+# `r stringr::str_to_sentence(params$position_title)` to a research-data infrastructure framework
 
 <!--
 Some resources for writing job descriptions:
@@ -43,28 +43,34 @@ Some resources for writing job descriptions:
 - https://harver.com/blog/inclusive-job-descriptions/
 -->
 
-The Steno Diabetes Center Aarhus (SDCA; https://www.stenoaarhus.dk/) is hiring
-a team to work on a recently funded software and data project. This project aims
-to build an open and scalable data infrastructure framework (DIF) for working
-with, discovering, and managing data that follows FAIR and open science
-principles. This is largely a *software* project that focuses on working with
-data, but not on data itself. A description of the DIF project can be found at
-https://steno-aarhus.github.io/dif-project/.
+The Department of Clinical Medicine (https://clin.au.dk/) at Aarhus University
+in collaboration with the Steno Diabetes Center Aarhus (SDCA;
+https://www.stenoaarhus.dk/) invites applications for `r params$position_title`
+positions to work on a team on a recently funded software and data project.
+This project aims to build an open and scalable data infrastructure framework
+(DIF) for working with, discovering, and managing data that follows FAIR and
+open science principles. This is largely a *software* project that focuses on
+working with data, but not on data itself. A description of the DIF project can
+be found at https://steno-aarhus.github.io/dif-project/.
 
-The core DIF team will be composed of two full-time research software engineers,
-a data manager, a database administrator, two project managers/coordinators, as
-well as the primary investigator. External and occasional collaborators include
-2-3 data managers and coordinators as well as consultant software engineers.
+Including this advertised position of `r params$position_title`, the core DIF
+team will be composed of two full-time research software engineers, a data
+manager, a database administrator, a team lead, as well as affiliate researchers
+and the primary investigator. 
+<!-- External collaborators include 2-3 data managers and coordinators as well as -->
+<!-- consultant software engineers. -->
 
-Because the project is just starting up, the DIF team will be completing
-
-Timeline? Gantt chart link.
+<!-- TODO? Timeline? Gantt chart link. -->
 
 SDCA is a center that brings together researchers and clinicians in an aim to
 better integrate work on multiple aspects of diabetes treatment, research, and
-education. The DIF project will be largely contributing to the research of
+education. The Department of Clinical Medicine, one of the largest health
+research department in Denmark, covers all the medical specialties and has
+close collaboration with the Region's hospitals. You can read
+more about the department here and about the faculty here.
+The DIF project will be largely contributing to the research of
 the center (https://www.stenoaarhus.dk/research/) as well as that of other
-research centers and initiatives throughout Denmark.
+Steno centers and research initiatives throughout Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
@@ -83,7 +89,7 @@ The **primary** responsibility for all members of the DIF team will be
 building and developing the newly started DIF project. For a general overview
 of timelines and tasks, see the Gantt chart in the project description 
 (https://steno-aarhus.github.io/dif-project/#deliverables-and-milestones)
-More specifically, tasks you will do include:
+More specifically, tasks will include:
 
 - Refining, critiquing, and improving on the descriptions of the use-cases and 
 the design and architecture of the DIF
@@ -100,9 +106,10 @@ All team members' *secondary* responsibilities (dependent on time available
 outside of the DIF project):
 
 - Contributing to tasks and projects related to the general administration or
-building up of SDCA (e.g. writing and/or updating onboarding documentation)
+building up of the general research environment (e.g. writing and/or updating
+onboarding documentation)
 - Assisting with building up general capacity and skills in
-reproducibility/transparency of research data analyses throughout SDCA
+reproducibility/transparency of research data analyses
 - Creating and running training sessions related to the DIF and to general
 computational analysis skills
 
@@ -110,7 +117,7 @@ computational analysis skills
 individual member of the team *does not* need to do all these tasks and instead
 will be assigned specific sections of the project.
 
-### `r params$position_title` responsibilities
+### `r stringr::str_to_sentence(params$position_title)` responsibilities
 
 ```{asis, echo=params$position == "rse"}
 - Building and developing RESTful APIs (or APIs in general) for the DIF
@@ -125,7 +132,7 @@ projects outside of the project time. There are many opportunities for research,
 networking, and collaboration within SDCA and across Denmark.
 ```
 
-```{asis, echo=params$position == "pm"}
+```{asis, echo=params$position == "tl"}
 - Planning, coordinating, and if necessary revising the tasks required to
 complete the DIF project
 - Tracking milestones and managing issues that may arise so that work on the DIF
@@ -134,8 +141,9 @@ project continues as smoothly as possible
 - Reviewing contributed code and documentation text, accepting changes made
 - Facilitating, communicating, and coordinating with the team members on
 completing the DIF project tasks
-- Outside of managing the DIF project (which accounts for 50% of the time),
-you are expected and encouraged to do your own research
+- In addition to the DIF project tasks, you are expected and encouraged to perform
+independent research activities, and time for this will be prioritized together
+with the primary investigator
 ```
 
 ```{asis, echo=params$position == "dba"}
@@ -168,93 +176,96 @@ to coordinate and manage implementing the DIF project
 
 ## Qualifications and experiences
 
-### Team-wide qualifications
+We expect, at a minimum, that *all team members*:
 
-All team members' should have at a minimum these **required** qualifications 
-and experiences:
-
-- Has worked on, started, or contributed to open source projects on open sharing
+- Have worked on, started, or contributed to open source projects on open sharing
 and collaborative platforms (e.g. Open Science Framework, GitHub, GitLab)
-- Has used Git or other version control software on a fairly regular basis for
+- Have used Git or other version control software on a fairly regular basis for
 projects
-- Is proficient in communicating (written and oral) in English
-- Is motivated, interested, and comfortable with working on projects that have
+- Are proficient in communicating (written and oral) in English
+- Are motivated, interested, and comfortable with working on projects that have
 recently started and that require contributing to a diversity of tasks typical
 of the early stages of any initiative
 
-Other *optional, bonus* qualifications and experiences include that you have:
+And we prefer, but don't require, that you:
 
-- Knowledge of and familiarity with *general* software development practices
-- Interest in or motivation to be involved in aspects of building up and
+- Have knowledge of and familiarity with *general* software development practices
+- Are interested in or motivated to be involved in aspects of building up and
 developing the culture and infrastructure of a newer organization
-- Knowledge of and experience in implementing and adhering to FAIR principles
+- Have Knowledge of and experience in implementing and adhering to FAIR principles
 
-### `r params$position_title` qualifications
+As the *`r params$position_title`*, we expect you to:
 
 ```{asis, echo=params$position == "rse"}
-- Demonstrated knowledge of and experience in using either Python or R for
+- Have demonstrated knowledge of and experience in using either Python or R for
 general programming tasks (need to be open to learning both)
-- Has developed software packages in Python or R that abides by
+- Have developed software packages in Python or R that abides by
 community-accepted standard practices (e.g. PIP or CRAN)
 
-**Optional** for this research software engineer position:
+We prefer, but don't require, that you as the *research software engineer*:
 
-- Experience in or familiar with using HTML, CSS, and other web technologies.
-- Familiar with general User Interface (UI) and/or User Experience (UX) design principles
-- Experience in or familiar with interacting with and/or developing APIs
-- Familiarity with general data engineering practices
-- Has some experience or familiarity with the research environment and its specific
+- Have experience in or familiar with using HTML, CSS, and other web technologies.
+- Are familiar with general User Interface (UI) and/or User Experience (UX) design principles
+- Have experience in or familiar with interacting with and/or developing APIs
+- Are familiar with general data engineering practices
+- Have some experience or familiarity with the research environment and its specific
 set of needs
 ```
 
-```{asis, echo=params$position == "pm"}
-- Experience in managing and coordinating projects and people
-- Demonstrated knowledge of and experience in using R and/or Python for
+```{asis, echo=params$position == "tl"}
+- Have experience in managing and coordinating projects and people
+- Have demonstrated knowledge of and experience in using R and/or Python for
 scientific data analysis and research software development
-- Knowledge of and proficient in general research practices and working with
+- Have knowledge of and proficient in general research practices and working with
 and managing big data
-- Demonstrated experience in, actively involved in, and passionate advocate for
+- Have demonstrated experience in, actively involved in, and passionate advocate for
 open scientific practices 
-- Competent in writing beginner-friendly documentation and in developing
+- Be competent in writing beginner-friendly documentation and in developing
 (and teaching) educational material in data analysis and open science
+- Be a skilled researcher with a PhD in health science and are familiar with
+register data
 ```
 
 ```{asis, echo=params$position == "dba"}
-- Knowledge of and experience in database management, development, and
+- Have knowledge of and experience in database management, development, and
 administration
-- Familiar with using and interacting with CSV and JSON data storage formats
-- Experience interacting with and building SQL databases and queries
+- Be familiar with using and interacting with CSV and JSON data storage formats
+- Have experience interacting with and building SQL databases and queries
 ```
 
 ```{asis, echo=params$position == "dm"}
-- Familiar with and experience in the DD2 project, database, and procedures
-- Experience in the Danish research computing environments, e.g.,
+- Are familiar with and experience in the DD2 project, database, and procedures
+- Have experience in the Danish research computing environments, e.g.,
 "Forskermaskine" (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
 ```
 
 ## Other details and job expectations
 
-- The position can (depending on where the applicant lives) be largely remote / work from home
+```{asis, echo=params$position == "tl"}
+- The position can be partly remote. We prefer that you come into the office at
+least twice a week.
+```
+```{asis, echo=params$position != "tl"}
+- The position can (depending on where the applicant lives) be largely remote /
+work from home
     - If you live or move to Aarhus for the position, we'd prefer that you come
     into the office twice a week
     - If you live outside of Denmark, we expect (and will cover) for you to
     participate in bigger in person meetings/events (e.g. our annual research
     retreat)
-```{asis, echo=params$position == "pm"}
-    - *Specific to the project manager position*, for the 50% dedicated work
-    on the DIF project, we expect you to be physically closer to the SDCA,
-    coming in at least twice a week
 ```
-- We don't expect you to have all the skills for the position and part of the
-job is learning these skills. In the process of learning them, we encourage you
-to create training docs as you learn so knowledge and skills can be shared
-- **Benefits**:
-    - Childcare, parental leave (dependent on country-specific factors)
-    - Very flexible working hours
-    - Great working environment and colleagues :)
+- The working hours are very flexible. We have a great working environment and
+colleagues :) Any necessary hardware or software will be provided or covered for.
+Salary is competitive and aligns with agreements between the university and the
+national unions.
+```{asis, echo=params$position != "tl"}
+- **International applicant?** Aarhus University offers a broad variety of
+services for international researchers and accompanying families, including
+relocation service and career counselling to expat partners. Find information
+about entering or working in Denmark on the Aarhus University 
+[website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
+```
 - If you have any specific questions about the position, **contact** Annelli
-Sandbæk (anesnd@rm.dk)
-- Other details:
-    - Any necessary hardware or software will be provided or covered for.
-    - Salary is competitive and aligns with agreements between the university
-    and the national unions.
+Sandbæk (anesnd@rm.dk).
+- **The application must be submitted via Aarhus University's recruitment system**,
+which can be accessed under the job advertisement on Aarhus University's website.
