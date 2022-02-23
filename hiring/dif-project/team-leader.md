@@ -1,6 +1,6 @@
 > **WARNING: Don’t edit this file, edit the `_template.Rmd` file.**
 
-# Research software engineer to a research-data infrastructure framework
+# Team leader to a research-data infrastructure framework
 
 <!--
 Some resources for writing job descriptions:
@@ -12,19 +12,19 @@ Some resources for writing job descriptions:
 
 The Department of Clinical Medicine (<https://clin.au.dk/>) at Aarhus
 University in collaboration with the Steno Diabetes Center Aarhus (SDCA;
-<https://www.stenoaarhus.dk/>) invites applications for research
-software engineer positions to work on a team on a recently funded
-software and data project. This project aims to build an open and
-scalable data infrastructure framework (DIF) for working with,
-discovering, and managing data that follows FAIR and open science
-principles. This is largely a *software* project that focuses on working
-with data, but not on data itself. A description of the DIF project can
-be found at <https://steno-aarhus.github.io/dif-project/>.
+<https://www.stenoaarhus.dk/>) invites applications for team leader
+positions to work on a team on a recently funded software and data
+project. This project aims to build an open and scalable data
+infrastructure framework (DIF) for working with, discovering, and
+managing data that follows FAIR and open science principles. This is
+largely a *software* project that focuses on working with data, but not
+on data itself. A description of the DIF project can be found at
+<https://steno-aarhus.github.io/dif-project/>.
 
-Including this advertised position of research software engineer, the
-core DIF team will be composed of two full-time research software
-engineers, a data manager, a database administrator, a team lead, as
-well as affiliate researchers and the primary investigator.
+Including this advertised position of team leader, the core DIF team
+will be composed of two full-time research software engineers, a data
+manager, a database administrator, a team lead, as well as affiliate
+researchers and the primary investigator.
 <!-- External collaborators include 2-3 data managers and coordinators as well as -->
 <!-- consultant software engineers. -->
 
@@ -45,9 +45,9 @@ infrastructure are still being actively developed. As a result, all SDCA
 personnel, including this current position and the rest of the DIF team,
 have a direct and impactful influence on how the culture and
 infrastructure is built and developed. Aside from working on the DIF
-project, other responsibilities for the research software engineer, as
-well as the rest of the team, include contributing to this (explicit and
-inclusive) culture, for instance by adding to our Common Docs
+project, other responsibilities for the team leader, as well as the rest
+of the team, include contributing to this (explicit and inclusive)
+culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
 ## Responsibilities and tasks
@@ -88,21 +88,20 @@ available outside of the DIF project):
 individual member of the team *does not* need to do all these tasks and
 instead will be assigned specific sections of the project.
 
-### Research software engineer responsibilities
+### Team leader responsibilities
 
--   Building and developing RESTful APIs (or APIs in general) for the
-    DIF
--   Reviewing contributed code and documentation text
--   Assisting with or developing tools for improving analysis and
-    workflow pipelines related to using the DIF (e.g. making Python/R
-    packages and scripts)
-
-*Note*, we anticipate that work on the DIF project will not take up all
-full-time work, so depending on the applicant’s interest, we encourage
-and support the research software engineer to pursue their own or
-collaborate on research projects outside of the project time. There are
-many opportunities for research, networking, and collaboration within
-SDCA and across Denmark.
+-   Planning, coordinating, and if necessary revising the tasks required
+    to complete the DIF project
+-   Tracking milestones and managing issues that may arise so that work
+    on the DIF project continues as smoothly as possible
+-   Creating a welcoming and collaborative environment
+-   Reviewing contributed code and documentation text, accepting changes
+    made
+-   Facilitating, communicating, and coordinating with the team members
+    on completing the DIF project tasks
+-   In addition to the DIF project tasks, you are expected and
+    encouraged to perform independent research activities, and time for
+    this will be prioritized together with the primary investigator
 
 ## Qualifications and experiences
 
@@ -128,48 +127,35 @@ And we prefer, but don’t require, that you:
 -   Have Knowledge of and experience in implementing and adhering to
     FAIR principles
 
-As the *research software engineer*, we expect you to:
+As the *team leader*, we expect you to:
 
--   Have demonstrated knowledge of and experience in using either Python
-    or R for general programming tasks (need to be open to learning
-    both)
--   Have developed software packages in Python or R that abides by
-    community-accepted standard practices (e.g. PIP or CRAN)
-
-We prefer, but don’t require, that you as the *research software
-engineer*:
-
--   Have experience in or familiar with using HTML, CSS, and other web
-    technologies.
--   Are familiar with general User Interface (UI) and/or User Experience
-    (UX) design principles
--   Have experience in or familiar with interacting with and/or
-    developing APIs
--   Are familiar with general data engineering practices
--   Have some experience or familiarity with the research environment
-    and its specific set of needs
+-   Have experience in managing and coordinating projects and people
+-   Have demonstrated knowledge of and experience in using R and/or
+    Python for scientific data analysis and research software
+    development
+-   Have knowledge of and proficient in general research practices and
+    working with and managing big data
+-   Have demonstrated experience in, actively involved in, and
+    passionate advocate for open scientific practices
+-   Be competent in writing beginner-friendly documentation and in
+    developing (and teaching) educational material in data analysis and
+    open science
+-   Be a skilled researcher with a PhD in health science and are
+    familiar with register data
 
 ## Other details and job expectations
 
--   The position can (depending on where the applicant lives) be largely
-    remote / work from home
-    -   If you live or move to Aarhus for the position, we’d prefer that
-        you come into the office twice a week
-    -   If you live outside of Denmark, we expect (and will cover) for
-        you to participate in bigger in person meetings/events (e.g. our
-        annual research retreat)
+-   The position can be partly remote. We prefer that you come into the
+    office at least twice a week.
+
 -   The working hours are very flexible. We have a great working
     environment and colleagues :) Any necessary hardware or software
     will be provided or covered for. Salary is competitive and aligns
     with agreements between the university and the national unions.
--   **International applicant?** Aarhus University offers a broad
-    variety of services for international researchers and accompanying
-    families, including relocation service and career counselling to
-    expat partners. Find information about entering or working in
-    Denmark on the Aarhus University
-    [website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
+
 -   If you have any specific questions about the position, **contact**
     Annelli Sandbæk (<anesnd@rm.dk>).
+
 -   **The application must be submitted via Aarhus University’s
     recruitment system**, which can be accessed under the job
     advertisement on Aarhus University’s website.

@@ -1,6 +1,6 @@
 > **WARNING: Don’t edit this file, edit the `_template.Rmd` file.**
 
-# Job description for database administrator
+# Database administrator to a research-data infrastructure framework
 
 <!--
 Some resources for writing job descriptions:
@@ -10,31 +10,35 @@ Some resources for writing job descriptions:
 - https://harver.com/blog/inclusive-job-descriptions/
 -->
 
-The Steno Diabetes Center Aarhus (SDCA; <https://www.stenoaarhus.dk/>)
-is hiring a team to work on a recently funded software and data project.
-This project aims to build an open and scalable data infrastructure
-framework (DIF) for working with, discovering, and managing data that
-follows FAIR and open science principles. This is largely a *software*
-project that focuses on working with data, but not on data itself. A
-description of the DIF project can be found at
+The Department of Clinical Medicine (<https://clin.au.dk/>) at Aarhus
+University in collaboration with the Steno Diabetes Center Aarhus (SDCA;
+<https://www.stenoaarhus.dk/>) invites applications for database
+administrator positions to work on a team on a recently funded software
+and data project. This project aims to build an open and scalable data
+infrastructure framework (DIF) for working with, discovering, and
+managing data that follows FAIR and open science principles. This is
+largely a *software* project that focuses on working with data, but not
+on data itself. A description of the DIF project can be found at
 <https://steno-aarhus.github.io/dif-project/>.
 
-The core DIF team will be composed of two full-time research software
-engineers, a data manager, a database administrator, two project
-managers/coordinators, as well as the primary investigator. External and
-occasional collaborators include 2-3 data managers and coordinators as
-well as consultant software engineers.
+Including this advertised position of database administrator, the core
+DIF team will be composed of two full-time research software engineers,
+a data manager, a database administrator, a team lead, as well as
+affiliate researchers and the primary investigator.
+<!-- External collaborators include 2-3 data managers and coordinators as well as -->
+<!-- consultant software engineers. -->
 
-Because the project is just starting up, the DIF team will be completing
-
-Timeline? Gantt chart link.
+<!-- TODO? Timeline? Gantt chart link. -->
 
 SDCA is a center that brings together researchers and clinicians in an
 aim to better integrate work on multiple aspects of diabetes treatment,
-research, and education. The DIF project will be largely contributing to
-the research of the center (<https://www.stenoaarhus.dk/research/>) as
-well as that of other research centers and initiatives throughout
-Denmark.
+research, and education. The Department of Clinical Medicine, one of the
+largest health research department in Denmark, covers all the medical
+specialties and has close collaboration with the Region’s hospitals. You
+can read more about the department here and about the faculty here. The
+DIF project will be largely contributing to the research of the center
+(<https://www.stenoaarhus.dk/research/>) as well as that of other Steno
+centers and research initiatives throughout Denmark.
 
 Since SDCA was started only a few years ago, its technical and social
 infrastructure are still being actively developed. As a result, all SDCA
@@ -55,7 +59,7 @@ building and developing the newly started DIF project. For a general
 overview of timelines and tasks, see the Gantt chart in the project
 description
 (<https://steno-aarhus.github.io/dif-project/#deliverables-and-milestones>)
-More specifically, tasks you will do include:
+More specifically, tasks will include:
 
 -   Refining, critiquing, and improving on the descriptions of the
     use-cases and the design and architecture of the DIF
@@ -73,11 +77,10 @@ All team members’ *secondary* responsibilities (dependent on time
 available outside of the DIF project):
 
 -   Contributing to tasks and projects related to the general
-    administration or building up of SDCA (e.g. writing and/or updating
-    onboarding documentation)
+    administration or building up of the general research environment
+    (e.g. writing and/or updating onboarding documentation)
 -   Assisting with building up general capacity and skills in
-    reproducibility/transparency of research data analyses throughout
-    SDCA
+    reproducibility/transparency of research data analyses
 -   Creating and running training sessions related to the DIF and to
     general computational analysis skills
 
@@ -85,7 +88,7 @@ available outside of the DIF project):
 individual member of the team *does not* need to do all these tasks and
 instead will be assigned specific sections of the project.
 
-### database administrator responsibilities
+### Database administrator responsibilities
 
 -   Building up the core architecture of the DIF SQL database (e.g. as a
     data warehouse)
@@ -107,39 +110,36 @@ networking, and collaboration within SDCA and across Denmark.
 
 ## Qualifications and experiences
 
-### Team-wide qualifications
+We expect, at a minimum, that *all team members*:
 
-All team members’ should have at a minimum these **required**
-qualifications and experiences:
-
--   Has worked on, started, or contributed to open source projects on
+-   Have worked on, started, or contributed to open source projects on
     open sharing and collaborative platforms (e.g. Open Science
     Framework, GitHub, GitLab)
--   Has used Git or other version control software on a fairly regular
+-   Have used Git or other version control software on a fairly regular
     basis for projects
--   Is proficient in communicating (written and oral) in English
--   Is motivated, interested, and comfortable with working on projects
+-   Are proficient in communicating (written and oral) in English
+-   Are motivated, interested, and comfortable with working on projects
     that have recently started and that require contributing to a
     diversity of tasks typical of the early stages of any initiative
 
-Other *optional, bonus* qualifications and experiences include that you
-have:
+And we prefer, but don’t require, that you:
 
--   Knowledge of and familiarity with *general* software development
-    practices
--   Interest in or motivation to be involved in aspects of building up
-    and developing the culture and infrastructure of a newer
+-   Have knowledge of and familiarity with *general* software
+    development practices
+-   Are interested in or motivated to be involved in aspects of building
+    up and developing the culture and infrastructure of a newer
     organization
--   Knowledge of and experience in implementing and adhering to FAIR
-    principles
+-   Have Knowledge of and experience in implementing and adhering to
+    FAIR principles
 
-### database administrator qualifications
+As the *database administrator*, we expect you to:
 
--   Knowledge of and experience in database management, development, and
-    administration
--   Familiar with using and interacting with CSV and JSON data storage
-    formats
--   Experience interacting with and building SQL databases and queries
+-   Have knowledge of and experience in database management,
+    development, and administration
+-   Be familiar with using and interacting with CSV and JSON data
+    storage formats
+-   Have experience interacting with and building SQL databases and
+    queries
 
 ## Other details and job expectations
 
@@ -150,19 +150,18 @@ have:
     -   If you live outside of Denmark, we expect (and will cover) for
         you to participate in bigger in person meetings/events (e.g. our
         annual research retreat)
--   We don’t expect you to have all the skills for the position and part
-    of the job is learning these skills. In the process of learning
-    them, we encourage you to create training docs as you learn so
-    knowledge and skills can be shared
--   **Benefits**:
-    -   Childcare, parental leave (dependent on country-specific
-        factors)
-    -   Very flexible working hours
-    -   Great working environment and colleagues :)
+-   The working hours are very flexible. We have a great working
+    environment and colleagues :) Any necessary hardware or software
+    will be provided or covered for. Salary is competitive and aligns
+    with agreements between the university and the national unions.
+-   **International applicant?** Aarhus University offers a broad
+    variety of services for international researchers and accompanying
+    families, including relocation service and career counselling to
+    expat partners. Find information about entering or working in
+    Denmark on the Aarhus University
+    [website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
 -   If you have any specific questions about the position, **contact**
-    Annelli Sandbæk (<anesnd@rm.dk>)
--   Other details:
-    -   Any necessary hardware or software will be provided or covered
-        for.
-    -   Salary is competitive and aligns with agreements between the
-        university and the national unions.
+    Annelli Sandbæk (<anesnd@rm.dk>).
+-   **The application must be submitted via Aarhus University’s
+    recruitment system**, which can be accessed under the job
+    advertisement on Aarhus University’s website.
