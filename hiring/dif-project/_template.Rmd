@@ -2,38 +2,46 @@
 params:
     # either rse, tl, dba, dm
     position: tl
-    position_title: "team leader"
-output: md_document
+output: word_document
 ---
+
+```{r job-details, include=FALSE}
+# For RSE add AC-TAP to output.
+details <- tibble::tribble(
+    ~id, ~title, ~start_date, ~duration,
+    "rse", "research software engineer", "TBD", "5 years and 2 years",
+    "tl", "team leader", "April 1", "5 years",
+    "dba", "database administrator", "TBD", "5 years",
+    "dm", "data manager", "TBD", "3 years?"
+)
+```
 
 ```{r generate-job-ads, eval=FALSE, include=FALSE}
 # this creates the descriptions for each of the positions.
 library(tidyverse)
 library(fs)
-position <- c(
-    rse = "research software engineer",
-    # Or team lead or other name?
-    tl = "team leader",
-    dba = "database administrator",
-    dm = "data manager"
-)
 
-iwalk(
-    position,
+walk2(
+    details$id,
+    details$title,
     ~ rmarkdown::render(
         input = here::here("hiring/dif-project/_template.Rmd"),
         output_file = here::here("hiring/dif-project/", 
-                                 str_replace_all(.x, " ", "-")),
-        params = list(position = .y, position_title = .x)
+                                 str_replace_all(.y, " ", "-")),
+        params = list(position = .x)
     ) 
 )
+```
+
+```{r select-job, include=FALSE}
+details <- dplyr::filter(details, id == params$position)
 ```
 
 ```{asis}
 > **WARNING: Don't edit this file, edit the `_template.Rmd` file.**
 ```
 
-# `r stringr::str_to_sentence(params$position_title)` to a research-data infrastructure framework
+# `r stringr::str_to_sentence(details$title)` to a research-data infrastructure framework
 
 <!--
 Some resources for writing job descriptions:
@@ -45,22 +53,13 @@ Some resources for writing job descriptions:
 
 The Department of Clinical Medicine (https://clin.au.dk/) at Aarhus University
 in collaboration with the Steno Diabetes Center Aarhus (SDCA;
-https://www.stenoaarhus.dk/) invites applications for `r params$position_title`
+https://www.stenoaarhus.dk/) invites applications for `r details$title`
 positions to work on a team on a recently funded software and data project.
 This project aims to build an open and scalable data infrastructure framework
 (DIF) for working with, discovering, and managing data that follows FAIR and
 open science principles. This is largely a *software* project that focuses on
 working with data, but not on data itself. A description of the DIF project can
 be found at https://steno-aarhus.github.io/dif-project/.
-
-Including this advertised position of `r params$position_title`, the core DIF
-team will be composed of two full-time research software engineers, a data
-manager, a database administrator, a team lead, as well as affiliate researchers
-and the primary investigator. 
-<!-- External collaborators include 2-3 data managers and coordinators as well as -->
-<!-- consultant software engineers. -->
-
-<!-- TODO? Timeline? Gantt chart link. -->
 
 SDCA is a center that brings together researchers and clinicians in an aim to
 better integrate work on multiple aspects of diabetes treatment, research, and
@@ -77,11 +76,16 @@ infrastructure are still being actively developed. As a result, all SDCA
 personnel, including this current position and the rest of the DIF team, have a
 direct and impactful influence on how the culture and infrastructure is built
 and developed. Aside from working on the DIF project, other responsibilities for
-the `r params$position_title`, as well as the rest of the team, include contributing
+the `r details$title`, as well as the rest of the team, include contributing
 to this (explicit and inclusive) culture, for instance by adding to our Common
 Docs (https://steno-aarhus.github.io/research/).
 
-## Responsibilities and tasks
+## Expected start date and duration of employment
+
+This position is expected to start `r details$start_date` or as soon as possible
+after this date and is for `r details$duration`.
+
+## Job description, responsibilities, and tasks
 
 ### Team-wide responsibilities
 
@@ -117,9 +121,11 @@ computational analysis skills
 individual member of the team *does not* need to do all these tasks and instead
 will be assigned specific sections of the project.
 
-### `r stringr::str_to_sentence(params$position_title)` responsibilities
+### `r stringr::str_to_sentence(details$title)` responsibilities
 
 ```{asis, echo=params$position == "rse"}
+As the research software engineer, you will be:
+
 - Building and developing RESTful APIs (or APIs in general) for the DIF
 - Reviewing contributed code and documentation text
 - Assisting with or developing tools for improving analysis and workflow
@@ -133,6 +139,8 @@ networking, and collaboration within SDCA and across Denmark.
 ```
 
 ```{asis, echo=params$position == "tl"}
+As the team leader, you will be:
+
 - Planning, coordinating, and if necessary revising the tasks required to
 complete the DIF project
 - Tracking milestones and managing issues that may arise so that work on the DIF
@@ -147,11 +155,13 @@ with the primary investigator
 ```
 
 ```{asis, echo=params$position == "dba"}
+As the database administor, you will be:
+
 - Building up the core architecture of the DIF SQL database (e.g. as a data warehouse)
 - Developing interfaces between the end users and the SQL database
 - Tracking and managing how the DIF project may use server resources
 
-Additional tasks may also include:
+Additional tasks you may also do include:
 
 - Providing support for running projects with "Forskermaskine" (research engine
 on Statistics Denmark or Sundhedsdatastyrelsen)
@@ -166,15 +176,17 @@ within SDCA and across Denmark.
 ```
 
 ```{asis, echo=params$position == "dm"}
-- Map out the various DD2 sources of data, documentation, and resources, and plan 
+As the data manager, you will be:
+
+- Mapping out the various DD2 sources of data, documentation, and resources, and plan 
 out steps to implement the DIF project
-- Write up documentation and provide support for working with "Forskermaskine" 
+- Writing up documentation and provide support for working with "Forskermaskine" 
 (research engine on Statistics Denmark or Sundhedsdatastyrelsen) projects
-- Act as liaison between the various DD2 centers and the DIF team, including
+- Acting as liaison between the various DD2 centers and the DIF team, including
 to coordinate and manage implementing the DIF project
 ```
 
-## Qualifications and experiences
+## Your profile: Qualifications and experiences
 
 We expect, at a minimum, that *all team members*:
 
@@ -194,7 +206,7 @@ And we prefer, but don't require, that you:
 developing the culture and infrastructure of a newer organization
 - Have Knowledge of and experience in implementing and adhering to FAIR principles
 
-As the *`r params$position_title`*, we expect you to:
+As the *`r details$title`*, we expect you to:
 
 ```{asis, echo=params$position == "rse"}
 - Have demonstrated knowledge of and experience in using either Python or R for
@@ -239,7 +251,17 @@ administration
 "Forskermaskine" (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
 ```
 
-## Other details and job expectations
+## Who we are/will be
+
+We will be building up the core team so that in the end we will be two full-time
+research software engineers (one 5 year and one 2 year positions), a data
+manager, a database administrator, a team leader, as well as affiliate researchers
+and the primary investigator. We think we're a fun and relaxed group, and we
+have a great working environment and colleagues :) 
+<!-- External collaborators include 2-3 data managers and coordinators as well as -->
+<!-- consultant software engineers. -->
+
+## What we offer
 
 ```{asis, echo=params$position == "tl"}
 - The position can be partly remote. We prefer that you come into the office at
@@ -254,10 +276,16 @@ work from home
     participate in bigger in person meetings/events (e.g. our annual research
     retreat)
 ```
-- The working hours are very flexible. We have a great working environment and
-colleagues :) Any necessary hardware or software will be provided or covered for.
-Salary is competitive and aligns with agreements between the university and the
-national unions.
+- The working hours are very flexible. 
+- Any necessary hardware or software will be provided or covered for.
+
+## Contact information
+
+- If you have any specific questions about the position, **contact** Annelli
+Sandbæk (anesnd@rm.dk).
+
+## Formalities and salary range
+
 ```{asis, echo=params$position != "tl"}
 - **International applicant?** Aarhus University offers a broad variety of
 services for international researchers and accompanying families, including
@@ -265,7 +293,8 @@ relocation service and career counselling to expat partners. Find information
 about entering or working in Denmark on the Aarhus University 
 [website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
 ```
-- If you have any specific questions about the position, **contact** Annelli
-Sandbæk (anesnd@rm.dk).
+- Salary is competitive and aligns with agreements between the university and the
+national unions.
 - **The application must be submitted via Aarhus University's recruitment system**,
 which can be accessed under the job advertisement on Aarhus University's website.
+

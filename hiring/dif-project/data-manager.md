@@ -21,15 +21,6 @@ largely a *software* project that focuses on working with data, but not
 on data itself. A description of the DIF project can be found at
 <https://steno-aarhus.github.io/dif-project/>.
 
-Including this advertised position of data manager, the core DIF team
-will be composed of two full-time research software engineers, a data
-manager, a database administrator, a team lead, as well as affiliate
-researchers and the primary investigator.
-<!-- External collaborators include 2-3 data managers and coordinators as well as -->
-<!-- consultant software engineers. -->
-
-<!-- TODO? Timeline? Gantt chart link. -->
-
 SDCA is a center that brings together researchers and clinicians in an
 aim to better integrate work on multiple aspects of diabetes treatment,
 research, and education. The Department of Clinical Medicine, one of the
@@ -50,7 +41,12 @@ rest of the team, include contributing to this (explicit and inclusive)
 culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
-## Responsibilities and tasks
+## Expected start date and duration of employment
+
+This position is expected to start TBD or as soon as possible after this
+date and is for 3 years?.
+
+## Job description, responsibilities, and tasks
 
 ### Team-wide responsibilities
 
@@ -90,15 +86,17 @@ instead will be assigned specific sections of the project.
 
 ### Data manager responsibilities
 
--   Map out the various DD2 sources of data, documentation, and
+As the data manager, you will be:
+
+-   Mapping out the various DD2 sources of data, documentation, and
     resources, and plan out steps to implement the DIF project
--   Write up documentation and provide support for working with
+-   Writing up documentation and provide support for working with
     “Forskermaskine” (research engine on Statistics Denmark or
     Sundhedsdatastyrelsen) projects
--   Act as liaison between the various DD2 centers and the DIF team,
+-   Acting as liaison between the various DD2 centers and the DIF team,
     including to coordinate and manage implementing the DIF project
 
-## Qualifications and experiences
+## Your profile: Qualifications and experiences
 
 We expect, at a minimum, that *all team members*:
 
@@ -130,7 +128,18 @@ As the *data manager*, we expect you to:
     “Forskermaskine” (research engine on Statistics Denmark or
     Sundhedsdatastyrelsen)
 
-## Other details and job expectations
+## Who we are/will be
+
+We will be building up the core team so that in the end we will be two
+full-time research software engineers (one 5 year and one 2 year
+positions), a data manager, a database administrator, a team leader, as
+well as affiliate researchers and the primary investigator. We think
+we’re a fun and relaxed group, and we have a great working environment
+and colleagues :)
+<!-- External collaborators include 2-3 data managers and coordinators as well as -->
+<!-- consultant software engineers. -->
+
+## What we offer
 
 -   The position can (depending on where the applicant lives) be largely
     remote / work from home
@@ -139,18 +148,24 @@ As the *data manager*, we expect you to:
     -   If you live outside of Denmark, we expect (and will cover) for
         you to participate in bigger in person meetings/events (e.g. our
         annual research retreat)
--   The working hours are very flexible. We have a great working
-    environment and colleagues :) Any necessary hardware or software
-    will be provided or covered for. Salary is competitive and aligns
-    with agreements between the university and the national unions.
+-   The working hours are very flexible.
+-   Any necessary hardware or software will be provided or covered for.
+
+## Contact information
+
+-   If you have any specific questions about the position, **contact**
+    Annelli Sandbæk (<anesnd@rm.dk>).
+
+## Formalities and salary range
+
 -   **International applicant?** Aarhus University offers a broad
     variety of services for international researchers and accompanying
     families, including relocation service and career counselling to
     expat partners. Find information about entering or working in
     Denmark on the Aarhus University
     [website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
--   If you have any specific questions about the position, **contact**
-    Annelli Sandbæk (<anesnd@rm.dk>).
+-   Salary is competitive and aligns with agreements between the
+    university and the national unions.
 -   **The application must be submitted via Aarhus University’s
     recruitment system**, which can be accessed under the job
     advertisement on Aarhus University’s website.
