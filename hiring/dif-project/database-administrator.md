@@ -15,9 +15,9 @@ of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for a
 position as a database administrator to work with a team on a recently
-funded software and data infrastructure project, starting
-`r details$start_date` or as soon as possible thereafter. The position
-is a fixed-term full-time position for 5 years.
+funded software and data infrastructure project, starting June 1 or as
+soon as possible thereafter. The position is a fixed-term full-time
+position for 5 years.
 
 At the Department of Clinical Medicine, you will be part of what is
 probably the largest health science research department in Denmark. Our
