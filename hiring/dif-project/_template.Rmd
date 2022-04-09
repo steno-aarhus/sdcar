@@ -3,9 +3,9 @@ params:
     # either rse, tl, dba, dm
     position: tl
 output: 
-    md_document: default
     word_document:
         reference_docx: instructions/rmd-reference.docx
+    md_document: default
 ---
 
 ```{r job-details, include=FALSE}
@@ -36,7 +36,6 @@ walk2(
     details$title,
     ~ rmarkdown::render(
         input = here::here("hiring/dif-project/_template.Rmd"),
-        output_format = "all",
         output_file = here::here("hiring/dif-project/", 
                                  str_replace_all(.y, " ", "-")),
         params = list(position = .x)
