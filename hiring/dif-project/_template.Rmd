@@ -14,7 +14,8 @@ library(tidyverse)
 details <- tribble(
     ~id, ~title, ~start_date,
     "rse", "research software engineer", "June 1",
-    "tl", "team leader", "May 1", 
+    # Job was posted
+    # "tl", "team leader", "May 1", 
     "dba", "database administrator", "June 1",
     "dm", "data manager", "TBD", 
 ) %>% 
