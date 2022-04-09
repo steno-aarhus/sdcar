@@ -13,11 +13,11 @@ Some resources for writing job descriptions:
 The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
-Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for a
-position as a database administrator to work with a team on a recently
-funded software and data infrastructure project, starting June 1 or as
-soon as possible thereafter. The position is a fixed-term full-time
-position for 5 years.
+Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
+the position of “database administrator” to work with a team on a
+recently funded software and data infrastructure project, starting June
+1 or as soon as possible thereafter. The position is full-time and
+fixed-term for up to 5 years.
 
 At the Department of Clinical Medicine, you will be part of what is
 probably the largest health science research department in Denmark. Our
@@ -33,11 +33,11 @@ research, and education.
 
 This project aims to build an open and scalable data infrastructure
 framework (DIF) for working with, discovering, and managing data that
-follows FAIR and open science principles. This is largely a *software*
-project that focuses on working with data, but not on data itself. A
-description of the DIF project can be found at
+follows FAIR and open science principles. This is a *software* project
+that focuses on working with data, but not on data itself. A description
+of the DIF project can be found at
 <https://steno-aarhus.github.io/dif-project/>. The DIF project will be
-largely contributing to the research of SDCA
+contributing to the research of SDCA
 (<https://www.stenoaarhus.dk/research/>) as well as that of other Steno
 centers and research initiatives throughout Denmark.
 
@@ -64,13 +64,17 @@ More specifically, tasks will include:
 
 -   Refining, critiquing, and improving on the descriptions of the
     use-cases and the design and architecture of the DIF
+
 -   Finding and reviewing similar projects to identify what to use and
     what can be improved upon
+
 -   Building, internally testing, and developing each component of the
     DIF into Minimally Valuable Products for early external testing and
     refining
+
 -   Writing public-facing, *beginner-friendly*, and accessible
     documentation on contributing to and using the DIF
+
 -   Creating and maintaining websites connected to the DIF (e.g. through
     GitHub Pages)
 
@@ -80,8 +84,10 @@ available outside of the DIF project):
 -   Contributing to tasks and projects related to the general
     administration or building up of the general research environment
     (e.g. writing and/or updating onboarding documentation)
+
 -   Assisting with building up general capacity and skills in
     reproducibility/transparency of research data analyses
+
 -   Creating and running training sessions related to the DIF and to
     general computational analysis skills
 
@@ -95,76 +101,85 @@ As the database administor, you will be:
 
 -   Building up the core architecture of the DIF SQL database (e.g. as a
     data warehouse)
+
 -   Developing interfaces between the end users and the SQL database
+
 -   Tracking and managing how the DIF project may use server resources
 
 Additional tasks you may also do include:
 
 -   Providing support for running projects with “Forskermaskine”
     (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
+
 -   Communicating and coordinating with Statistics Denmark to refine how
     the DIF project may be implemented
 
 *Note*, we anticipate that work on the DIF project will not take up all
 full-time work, so depending on the applicant’s interest, we encourage
 and support pursuing their own or collaborating on other projects
-outside of the project time. There are many opportunities for research,
-networking, and collaboration within SDCA and across Denmark.
+outside of the project time.
 
 ## Your competencies
 
-We expect, at a minimum, that *all team members*:
+We expect, at a minimum, that you:
 
--   Have worked on, started, or contributed to open source projects on
-    open sharing and collaborative platforms (e.g. Open Science
-    Framework, GitHub, GitLab)
--   Have used Git or other version control software on a fairly regular
-    basis for projects
 -   Are proficient in communicating (written and oral) in English
+
 -   Are motivated, interested, and comfortable with working on projects
     that have recently started and that require contributing to a
     diverse set of tasks typical of the early stages of any initiative
 
+-   Have knowledge of and experience in database management,
+    development, and administration
+
+-   Be familiar with using and interacting with various data storage
+    formats (like CSV and JSON)
+
+-   Have experience interacting with and building SQL databases and
+    queries
+
 And we prefer, but don’t require, that you:
+
+-   Have worked on, started, or contributed to open source projects on
+    open sharing and collaborative platforms (e.g. Open Science
+    Framework, GitHub, GitLab)
 
 -   Have knowledge of and familiarity with *general* software
     development practices
+
 -   Are interested in or motivated to be involved in aspects of building
     up and developing the culture and infrastructure of a newer
     organization
+
 -   Have knowledge of and experience in implementing and adhering to
-    FAIR principles
+    FAIR/open principles
 
-As the *database administrator*, we expect you to:
+-   Have used Git or other version control software for projects
 
--   Have knowledge of and experience in database management,
-    development, and administration
--   Be familiar with using and interacting with CSV and JSON data
-    storage formats
--   Have experience interacting with and building SQL databases and
-    queries
+-   Have knowledge of or experience in working with health data (like
+    cohorts, biobanks, registers)
 
 ## Who we are/will be
 
 We will be building up the core team so that in the end we will be two
-full-time research software engineers (one 5 year and one 2 year
-positions), a data manager, a database administrator, a team leader, as
-well as affiliate researchers and the primary investigator. We think
-we’re a fun and relaxed group, and we have a great working environment
-and colleagues :)
-<!-- External collaborators include 2-3 data managers and coordinators as well as -->
-<!-- consultant software engineers. -->
+full-time research software engineers, a data manager, a database
+administrator, a team leader, as well as affiliate researchers and the
+primary investigator. We have a great working environment with an
+informal and positive atmosphere.
 
 ## What we offer
 
 -   The position can (depending on where the applicant lives) be largely
     remote / work from home
-    -   If you live or move to Aarhus for the position, we’d prefer that
-        you come into the office at SDCA twice a week
+
+    -   If you live or move to Aarhus for the position, we expect that
+        you come into the office at SDCA at least twice a week
     -   If you live outside of Denmark, we expect (and will cover) for
         you to participate in bigger in person meetings/events (e.g. our
         annual research retreat)
--   The working hours are very flexible.
+
+-   The working hours are flexible.
+
 -   Any necessary hardware or software will be provided or covered for.
 
 ## Contact information
@@ -174,11 +189,5 @@ and colleagues :)
 
 ## Formalities and salary range
 
--   **International applicant?** Aarhus University offers a broad
-    variety of services for international researchers and accompanying
-    families, including relocation service and career counselling to
-    expat partners. Find information about entering or working in
-    Denmark on the Aarhus University
-    [website](https://international.au.dk/life/researcherscomingtoau/servicesandactivities).
 -   Salary is competitive and aligns with agreements between the
     university and the national unions.
