@@ -14,7 +14,7 @@ The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
-the position of “database administrator” to work with a team on a
+the position as “database administrator” to work with a team on a
 recently funded software and data infrastructure project, starting June
 1 or as soon as possible thereafter. The position is full-time and
 fixed-term for up to 5 years.
@@ -52,6 +52,28 @@ inclusive) culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
 ## Your job responsibilities
+
+As the database administor, you will be:
+
+-   Building up the core architecture of the DIF SQL database (e.g. as a
+    data warehouse)
+
+-   Developing interfaces between the end users and the SQL database
+
+-   Tracking and managing how the DIF project may use server resources
+
+Additional tasks you may also do include:
+
+-   Providing support for running projects with “Forskermaskine”
+    (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
+
+-   Communicating and coordinating with Statistics Denmark to refine how
+    the DIF project may be implemented
+
+*Note*, we anticipate that work on the DIF project will not take up all
+full-time work, so depending on the applicant’s interest, we encourage
+and support pursuing their own or collaborating on other projects
+outside of the project time.
 
 ### Team-wide responsibilities
 
@@ -95,29 +117,7 @@ available outside of the DIF project):
 individual member of the team *does not* need to do all these tasks and
 instead will be assigned specific sections of the project.
 
-### Database administrator responsibilities
-
-As the database administor, you will be:
-
--   Building up the core architecture of the DIF SQL database (e.g. as a
-    data warehouse)
-
--   Developing interfaces between the end users and the SQL database
-
--   Tracking and managing how the DIF project may use server resources
-
-Additional tasks you may also do include:
-
--   Providing support for running projects with “Forskermaskine”
-    (research engine on Statistics Denmark or Sundhedsdatastyrelsen)
-
--   Communicating and coordinating with Statistics Denmark to refine how
-    the DIF project may be implemented
-
-*Note*, we anticipate that work on the DIF project will not take up all
-full-time work, so depending on the applicant’s interest, we encourage
-and support pursuing their own or collaborating on other projects
-outside of the project time.
+You will report to the Unit Head Annelli Sandbæk and to the team leader.
 
 ## Your competencies
 

@@ -3,9 +3,9 @@ params:
     # either rse, tl, dba, dm
     position: tl
 output: 
+    md_document: default
     word_document:
         reference_docx: instructions/rmd-reference.docx
-    md_document: default
 ---
 
 ```{r job-details, include=FALSE}
@@ -45,6 +45,7 @@ walk2(
 
 ```{r select-job, include=FALSE}
 details <- dplyr::filter(details, id == params$position)
+number_of_positions <- ifelse(params$position == "rse", "two positions", "the position")
 ```
 
 ```{asis}
@@ -64,7 +65,7 @@ Some resources for writing job descriptions:
 The [Department of Clinical Medicine](https://clin.au.dk/) at 
 [Faculty of Health](https://health.au.dk/en/) at Aarhus University, in collaboration 
 with the [Steno Diabetes Center Aarhus](https://www.stenoaarhus.dk/) (SDCA),
-invites applications for the position of "`r details$title`" to work with a team
+invites applications for `r number_of_positions` as "`r details$title`" to work with a team
 on a recently funded software and data infrastructure project, starting 
 `r details$start_date` or as soon as possible thereafter. `r details$duration`
 
@@ -98,48 +99,6 @@ to this (explicit and inclusive) culture, for instance by adding to our Common
 Docs (https://steno-aarhus.github.io/research/).
 
 ## Your job responsibilities
-
-### Team-wide responsibilities
-
-The **primary** responsibility for all members of the DIF team will be
-building and developing the newly started DIF project. For a general overview
-of timelines and tasks, see the Gantt chart in the project description 
-(https://steno-aarhus.github.io/dif-project/#deliverables-and-milestones)
-More specifically, tasks will include:
-
-- Refining, critiquing, and improving on the descriptions of the use-cases and 
-the design and architecture of the DIF
-
-- Finding and reviewing similar projects to identify what to use and what can be
-improved upon
-
-- Building, internally testing, and developing each component of the DIF into
-Minimally Valuable Products for early external testing and refining
-
-- Writing public-facing, *beginner-friendly*, and accessible documentation on
-contributing to and using the DIF
-
-- Creating and maintaining websites connected to the DIF (e.g. through
-GitHub Pages)
-
-All team members' *secondary* responsibilities (dependent on time available
-outside of the DIF project):
-
-- Contributing to tasks and projects related to the general administration or
-building up of the general research environment (e.g. writing and/or updating
-onboarding documentation)
-
-- Assisting with building up general capacity and skills in
-reproducibility/transparency of research data analyses
-
-- Creating and running training sessions related to the DIF and to general
-computational analysis skills
-
-*Note*, while the team as a whole will need to complete these tasks, any
-individual member of the team *does not* need to do all these tasks and instead
-will be assigned specific sections of the project.
-
-### `r stringr::str_to_sentence(details$title)` responsibilities
 
 ```{asis, echo=params$position == "rse"}
 As the research software engineer, you will be:
@@ -213,6 +172,48 @@ out steps to implement the DIF project
 - Acting as liaison between the various DD2 centers and the DIF team, including
 to coordinate and manage implementing the DIF project
 ```
+
+### Team-wide responsibilities
+
+The **primary** responsibility for all members of the DIF team will be
+building and developing the newly started DIF project. For a general overview
+of timelines and tasks, see the Gantt chart in the project description 
+(https://steno-aarhus.github.io/dif-project/#deliverables-and-milestones)
+More specifically, tasks will include:
+
+- Refining, critiquing, and improving on the descriptions of the use-cases and 
+the design and architecture of the DIF
+
+- Finding and reviewing similar projects to identify what to use and what can be
+improved upon
+
+- Building, internally testing, and developing each component of the DIF into
+Minimally Valuable Products for early external testing and refining
+
+- Writing public-facing, *beginner-friendly*, and accessible documentation on
+contributing to and using the DIF
+
+- Creating and maintaining websites connected to the DIF (e.g. through
+GitHub Pages)
+
+All team members' *secondary* responsibilities (dependent on time available
+outside of the DIF project):
+
+- Contributing to tasks and projects related to the general administration or
+building up of the general research environment (e.g. writing and/or updating
+onboarding documentation)
+
+- Assisting with building up general capacity and skills in
+reproducibility/transparency of research data analyses
+
+- Creating and running training sessions related to the DIF and to general
+computational analysis skills
+
+*Note*, while the team as a whole will need to complete these tasks, any
+individual member of the team *does not* need to do all these tasks and instead
+will be assigned specific sections of the project.
+
+You will report to the Unit Head Annelli Sandbæk and to the team leader.
 
 ## Your competencies
 

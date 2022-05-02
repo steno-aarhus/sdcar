@@ -14,7 +14,7 @@ The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
-the position of “research software engineer” to work with a team on a
+two positions as “research software engineer” to work with a team on a
 recently funded software and data infrastructure project, starting June
 1 or as soon as possible thereafter. There are two positions for
 ‘research software engineer’ that are full-time and negotiable for up to
@@ -53,6 +53,22 @@ inclusive) culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
 ## Your job responsibilities
+
+As the research software engineer, you will be:
+
+-   Building and developing RESTful APIs (or APIs in general) for the
+    DIF
+
+-   Reviewing contributed code and documentation text
+
+-   Assisting with or developing tools for improving analysis and
+    workflow pipelines related to using the DIF (e.g. making Python/R
+    packages and scripts)
+
+*Note*, we anticipate that work on the DIF project will not take up all
+full-time work, so depending on the applicant’s interest, we encourage
+and support the research software engineer to collaborate on research
+projects outside of the project time.
 
 ### Team-wide responsibilities
 
@@ -96,23 +112,7 @@ available outside of the DIF project):
 individual member of the team *does not* need to do all these tasks and
 instead will be assigned specific sections of the project.
 
-### Research software engineer responsibilities
-
-As the research software engineer, you will be:
-
--   Building and developing RESTful APIs (or APIs in general) for the
-    DIF
-
--   Reviewing contributed code and documentation text
-
--   Assisting with or developing tools for improving analysis and
-    workflow pipelines related to using the DIF (e.g. making Python/R
-    packages and scripts)
-
-*Note*, we anticipate that work on the DIF project will not take up all
-full-time work, so depending on the applicant’s interest, we encourage
-and support the research software engineer to collaborate on research
-projects outside of the project time.
+You will report to the Unit Head Annelli Sandbæk and to the team leader.
 
 ## Your competencies
 
