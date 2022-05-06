@@ -14,7 +14,7 @@ The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
-the position of “data manager” to work with a team on a recently funded
+the position as “data manager” to work with a team on a recently funded
 software and data infrastructure project, starting TBD or as soon as
 possible thereafter. The position is full-time and fixed-term for up to
 5 years.
@@ -52,6 +52,18 @@ culture, for instance by adding to our Common Docs
 (<https://steno-aarhus.github.io/research/>).
 
 ## Your job responsibilities
+
+As the data manager, you will be:
+
+-   Mapping out the various DD2 sources of data, documentation, and
+    resources, and plan out steps to implement the DIF project
+
+-   Writing up documentation and provide support for working with
+    “Forskermaskine” (research engine on Statistics Denmark or
+    Sundhedsdatastyrelsen) projects
+
+-   Acting as liaison between the various DD2 centers and the DIF team,
+    including to coordinate and manage implementing the DIF project
 
 ### Team-wide responsibilities
 
@@ -95,19 +107,7 @@ available outside of the DIF project):
 individual member of the team *does not* need to do all these tasks and
 instead will be assigned specific sections of the project.
 
-### Data manager responsibilities
-
-As the data manager, you will be:
-
--   Mapping out the various DD2 sources of data, documentation, and
-    resources, and plan out steps to implement the DIF project
-
--   Writing up documentation and provide support for working with
-    “Forskermaskine” (research engine on Statistics Denmark or
-    Sundhedsdatastyrelsen) projects
-
--   Acting as liaison between the various DD2 centers and the DIF team,
-    including to coordinate and manage implementing the DIF project
+You will report to the Unit Head Annelli Sandbæk and to the team leader.
 
 ## Your competencies
 
