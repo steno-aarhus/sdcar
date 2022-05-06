@@ -15,8 +15,8 @@ of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
 two positions as “research software engineer” to work with a team on a
-recently funded software and data infrastructure project, starting June
-1 or as soon as possible thereafter. There are two positions for
+recently funded software and data infrastructure project, starting
+August 1 or as soon as possible thereafter. There are two positions for
 ‘research software engineer’ that are full-time and negotiable for up to
 5 years.
 

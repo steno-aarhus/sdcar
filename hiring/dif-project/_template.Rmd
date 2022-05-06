@@ -13,10 +13,10 @@ output:
 library(tidyverse)
 details <- tribble(
     ~id, ~title, ~start_date,
-    "rse", "research software engineer", "June 1",
+    "rse", "research software engineer", "August 1",
     # Job was posted
     # "tl", "team leader", "May 1", 
-    "dba", "database administrator", "June 1",
+    "dba", "database administrator", "August 1",
     "dm", "data manager", "TBD", 
 ) %>% 
     mutate(duration = if_else(
