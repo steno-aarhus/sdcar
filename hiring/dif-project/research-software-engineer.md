@@ -14,11 +14,11 @@ The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
-two positions as “research software engineer” to work with a team on a
-recently funded software and data infrastructure project, starting
-August 1 or as soon as possible thereafter. There are two positions for
-‘research software engineer’ that are full-time and negotiable for up to
-5 years.
+two positions as “research software engineer” to work (largely remote)
+with a team on a recently funded software and data infrastructure
+project, starting Sept 1 or as soon as possible thereafter. There are
+two positions for ‘research software engineer’ that are full-time and
+negotiable for up to 5 years.
 
 At the Department of Clinical Medicine, you will be part of what is
 probably the largest health science research department in Denmark. Our
@@ -124,6 +124,8 @@ We expect, at a minimum, that you:
     that have recently started and that require contributing to a
     diverse set of tasks typical of the early stages of any initiative
 
+-   
+
 -   Have demonstrated knowledge of and experience in using either Python
     or R for general programming tasks (need to be open to learning
     both)
@@ -186,6 +188,9 @@ informal and positive atmosphere.
 -   The working hours are flexible.
 
 -   Any necessary hardware or software will be provided or covered for.
+
+-   The position allows for a lot of freedom and autonomy in work and in
+    the decision making on the direction the will take.
 
 ## Contact information
 

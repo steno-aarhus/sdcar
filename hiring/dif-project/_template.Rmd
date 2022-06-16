@@ -13,11 +13,11 @@ output:
 library(tidyverse)
 details <- tribble(
     ~id, ~title, ~start_date,
-    "rse", "research software engineer", "August 1",
+    "rse", "research software engineer", "Sept 1",
     # Job was posted
     # "tl", "team leader", "May 1", 
-    "dba", "database administrator", "August 1",
-    "dm", "data manager", "TBD", 
+    "dba", "database administrator", "Sept 1"
+    # "dm", "data manager", "TBD", 
 ) %>% 
     mutate(duration = if_else(
         id == "rse",
@@ -65,7 +65,8 @@ Some resources for writing job descriptions:
 The [Department of Clinical Medicine](https://clin.au.dk/) at 
 [Faculty of Health](https://health.au.dk/en/) at Aarhus University, in collaboration 
 with the [Steno Diabetes Center Aarhus](https://www.stenoaarhus.dk/) (SDCA),
-invites applications for `r number_of_positions` as "`r details$title`" to work with a team
+invites applications for `r number_of_positions` as "`r details$title`" to work 
+(largely remote) with a team
 on a recently funded software and data infrastructure project, starting 
 `r details$start_date` or as soon as possible thereafter. `r details$duration`
 
@@ -225,6 +226,8 @@ We expect, at a minimum, that you:
 recently started and that require contributing to a diverse set of tasks typical
 of the early stages of any initiative
 
+- 
+
 ```{asis, echo=params$position == "rse"}
 - Have demonstrated knowledge of and experience in using either Python or R for
 general programming tasks (need to be open to learning both)
@@ -332,6 +335,9 @@ work from home
 - The working hours are flexible. 
 
 - Any necessary hardware or software will be provided or covered for.
+
+- The position allows for a lot of freedom and autonomy in work and in the decision
+making on the direction the will take. 
 
 ## Contact information
 
