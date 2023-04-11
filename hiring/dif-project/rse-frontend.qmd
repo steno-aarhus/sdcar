@@ -1,11 +1,11 @@
 ---
 format: 
-    docx:
-        reference-doc: instructions/rmd-reference.docx
-editor_options:
-    markdown:
-        wrap: 72
-        canonical: true
+  docx:
+    reference-doc: instructions/rmd-reference.docx
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
 ---
 
 # Research software engineer for a research-data infrastructure framework
@@ -14,11 +14,10 @@ The [Department of Clinical Medicine](https://clin.au.dk/) at [Faculty
 of Health](https://health.au.dk/en/) at Aarhus University, in
 collaboration with the [Steno Diabetes Center
 Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
-one position as "research software engineer" to work (in person or
-remote) with a team on a software and data infrastructure project,
-starting June 1 or as soon as possible thereafter. The position for
-'research software engineer' that are full-time and negotiable for up to
-3 years.
+one "research software engineer" position to work (in person or remote)
+with a team on a software and data engineering project, starting
+September 1 or as soon as possible thereafter. The position is full-time
+for up to 2 years (with the potential for extending it).
 
 At the Department of Clinical Medicine, you will be part of what is
 probably the largest health science research department in Denmark. Our
@@ -42,14 +41,14 @@ will be contributing to the research of SDCA
 (<https://www.stenoaarhus.dk/research/>) as well as that of other Steno
 centers and research initiatives throughout Denmark.
 
-Since SDCA was started only a few years ago, its technical and social
-infrastructure are still being actively developed. As a result, all SDCA
-personnel, including this current position and the rest of the DIF team,
-have a direct and impactful influence on how the culture and
-infrastructure is built and developed. Aside from working on Seedcase,
-other responsibilities for the research software engineer, as well as
-the rest of the team, include contributing to building this organization
-and culture.
+SDCA is still a young and growing center, so its technical and social
+infrastructure are still being actively developed and refined. All SDCA
+personnel, including this current position and the rest of the Seedcase
+team, have a direct and impactful influence on the building and
+developing of the culture and infrastructure. Aside from working on
+Seedcase, other responsibilities for the research software engineer, as
+well as the rest of the team, include contributing to building this
+organization and culture.
 
 ## Your job responsibilities
 
@@ -58,27 +57,24 @@ As the research software engineer, you will be:
 -   Building and developing RESTful APIs (or APIs in general) for
     Seedcase
 
--   Building and developing the frontend.
+-   Building and developing the front end of the application
 
--   Reviewing contributed code and documentation text
+-   Writing and reviewing code and documentation
 
 -   Assisting with or developing tools for improving analysis and
-    workflow pipelines related to using Seedcase (e.g. making Python/R
+    workflow pipelines related to using Seedcase (e.g. making Python/R
     packages and scripts)
 
-*Note*, we anticipate that work on Seedcase project will not take up all
-full-time work, so depending on the applicant's interest, we encourage
-and support the research software engineer to collaborate on research
-projects outside of the project time.
+*Note*, we anticipate that work on the Seedcase project will not take up
+all full-time work, so depending on the applicant's interest, we
+encourage and support the research software engineer to collaborate on
+research projects outside of the project time.
 
 ### Team-wide responsibilities
 
 The **primary** responsibility for all members of the Seedcase team will
-be building and developing the newly started DIF project. For a general
-overview of timelines and tasks, see the Gantt chart in the project
-roadmap
-(<https://steno-aarhus.github.io/seedcase-project/community/contribute/roadmap.html>)
-More specifically, tasks will include:
+be building and developing the Seedcase project. More specifically,
+tasks will include:
 
 -   Refining, critiquing, and improving on the descriptions of the
     use-cases and the design and architecture of Seedcase
@@ -93,21 +89,26 @@ More specifically, tasks will include:
 -   Writing public-facing, *beginner-friendly*, and accessible
     documentation on contributing to and using Seedcase
 
--   Creating and maintaining websites connected to Seedcase
-    (e.g. through GitHub Pages)
+-   Creating and maintaining websites connected to Seedcase (e.g.
+    through GitHub Pages)
 
 All team members' *secondary* responsibilities (dependent on time
-available outside of the DIF project):
+available outside of the Seedcase project):
 
 -   Contributing to tasks and projects related to the general
     administration or building up of the general research environment
-    (e.g. writing and/or updating onboarding documentation)
+    (e.g. writing and/or updating onboarding documentation)
 
 -   Assisting with building up general capacity and skills in
-    reproducibility/transparency of research data analyses
+    computational and programmatic skills and knowledge through training
+    and documentation
 
--   Creating and running training sessions related to the Seedcase and
-    to general computational analysis skills
+-   Creating teaching material and running training sessions related to
+    Seedcase
+
+-   Contributing to Steno-wide data and software engineering activities,
+    such as building tools to help streamline or automating common tasks
+    that staff and researchers do
 
 *Note*, while the team as a whole will need to complete these tasks, any
 individual member of the team *does not* need to do all these tasks and
@@ -124,7 +125,7 @@ We expect, at a minimum, that you:
 
 -   Are motivated, interested, and comfortable with working on projects
     that have recently started and that require contributing to a
-    diverse set of tasks typical of the early stages of any initiative
+    diverse set of tasks typical of the early stages of any project
 
 -   Have demonstrated knowledge of and experience in using either
     Python, JavaScript, or R for general programming tasks (need to be
@@ -139,7 +140,7 @@ We expect, at a minimum, that you:
 And we prefer, but don't require, that you:
 
 -   Have developed or contributed to software packages in Python or R
-    that abides by community-accepted standard practices (e.g. PIP or
+    that abides by community-accepted standard practices (e.g. PIP or
     CRAN)
 
 -   Have worked on, started, or contributed to open source projects on
@@ -181,8 +182,7 @@ great working environment with an informal and positive atmosphere.
     -   If you live or move to Aarhus for the position, we expect that
         you come into the office at SDCA at least twice a week
     -   If you live outside of Denmark, we expect (and will cover) for
-        you to participate in bigger in person meetings/events (e.g. our
-        annual research retreat)
+        you to participate in bigger in person meetings/events
 
 -   The working hours are flexible.
 
@@ -194,7 +194,8 @@ great working environment with an informal and positive atmosphere.
 ## Contact information
 
 -   If you have any specific questions about the position, **contact**
-    Annelli Sandbæk ([anesnd\@rm.dk](mailto:anesnd@rm.dk){.email}).
+    Luke Johnston
+    ([lwjohnst\@clin.au.dk](mailto:lwjohnst@clin.au.dk){.email}).
 
 ## Formalities and salary range
 
