@@ -19,13 +19,21 @@ with a team on a software and data engineering project, starting
 September 1 or as soon as possible thereafter. The position is full-time
 for up to 2 years (with the potential for extending it).
 
-At the Department of Clinical Medicine, you will be part of what is
-probably the largest health science research department in Denmark. Our
-clinical research covers all the medical specialties and takes place in
-close collaboration with the university hospital and the regional
-hospitals in the Central Denmark Region. At the department we are
-approximately 425 academic employees and the same number of PhD students
-cooperating across disciplines.
+As an employee at the Department of Clinical Medicine, you will be part
+of what is probably the largest health science research department in
+Denmark. Our clinical research covers all the medical specialities and
+takes place in close collaboration with the university hospital and the
+regional hospitals in the Central Denmark Region. We have approx. 30,000
+square metres of modern research facilities for experimental surgery and
+medicine, animal facilities and also advanced scanners at our disposal.
+The department has overall responsibility for the Master's degree
+programs in medicine and in molecular medicine. At the department we are
+approx. 670 academic employees, 500 PhD students and 160
+technical/administrative employees who are cooperating across
+disciplines. As an employee, you will be working on Aarhus University
+Hospital or another hospital in the Central Denmark Region. You can read
+more about the department [here](https://clin.au.dk/) and about the
+faculty [here](https://health.au.dk/en/).
 
 SDCA is a center that brings together researchers and clinicians in an
 aim to better integrate work on multiple aspects of diabetes treatment,
@@ -65,10 +73,13 @@ As the research software engineer, you will be:
     workflow pipelines related to using Seedcase (e.g. making Python/R
     packages and scripts)
 
-*Note*, we anticipate that work on the Seedcase project will not take up
-all full-time work, so depending on the applicant's interest, we
-encourage and support the research software engineer to collaborate on
-research projects outside of the project time.
+While there are many tasks to work on for the Seedcase project, the
+position offers a large amount of autonomy and freedom. As long as tasks
+are completed and we make progress on our milestones, there is the
+potential for the applicant to collaborate on other research projects
+within AU and SDCA. If the applicant has interest and motivation in
+those other projects or wishes to learn new skills and knowledge, we
+definitely encourage and support pursuing these types of activities.
 
 ### Team-wide responsibilities
 
@@ -159,7 +170,7 @@ And we prefer, but don't require, that you:
 -   Are familiar with general User Interface (UI) and/or User Experience
     (UX) design principles
 
--   Have experience in or familiar with interacting with and/or
+-   Have experience in or familiarity with interacting with and/or
     developing APIs
 
 -   Are familiar with general data engineering practices
@@ -177,10 +188,12 @@ great working environment with an informal and positive atmosphere.
 ## What we offer
 
 -   The position can (depending on where the applicant lives) be largely
-    remote / work from home
+    remote / work from home.
 
     -   If you live or move to Aarhus for the position, we expect that
-        you come into the office at SDCA at least twice a week
+        you come into the office at SDCA at least twice a week. SDCA
+        office is placed at Steno Diabetes Center Aarhus, Palle
+        Juul-Jensens Boulevard 99, Building A, 8200 Aarhus N, Denmark
     -   If you live outside of Denmark, we expect (and will cover) for
         you to participate in bigger in person meetings/events
 
@@ -189,7 +202,7 @@ great working environment with an informal and positive atmosphere.
 -   Any necessary hardware or software will be provided or covered for.
 
 -   The position allows for a lot of freedom and autonomy in work and in
-    the decision making on the direction the will take.
+    the decision making on the direction the project will take.
 
 ## Contact information
 
@@ -197,7 +210,42 @@ great working environment with an informal and positive atmosphere.
     Luke Johnston
     ([lwjohnst\@clin.au.dk](mailto:lwjohnst@clin.au.dk){.email}).
 
-## Formalities and salary range
+## Terms of employment
 
--   Salary is competitive and aligns with agreements between the
-    university and the national unions.
+Terms of employment and pay are regulated by the collective agreement
+between the Ministry of Finance and the applicable collective agreement.
+
+## Application
+
+Your application must include the following:
+
+-   Motivated application
+-   Curriculum Vitae
+-   Indication of education (a copy of the diplomas should be uploaded)
+-   References/recommendations can be uploaded separately in the
+    recruitment system
+
+The **deadline for applications** is June 9th, 2023. We expect to
+conduct job interviews sometime during the weeks of 24-26 (June 12-30).
+
+We refer to the faculty's [Guideline for
+applicants](https://health.au.dk/fileadmin/www.health.au.dk/Om_Health_Ekstern/Ledige_stillinger/Ansaettelsesprocedurer/PDF/Guidelines-for-applicants-to-technical-administrative-positions.pdf).
+
+Aarhus University's ambition is to be an attractive and inspiring
+workplace for all and to foster a culture in which each individual has
+opportunities to thrive, achieve and develop. We view equality and
+diversity as assets, and we welcome all applicants.
+
+*The application must be submitted via Aarhus University's recruitment
+system, which can be accessed under the job advertisement on Aarhus
+University's website.*
+
+**Aarhus University**
+
+*Aarhus University is an academically diverse and research-intensive
+university with a strong commitment to high-quality research and
+education and the development of society nationally and globally. The
+university offers an inspiring research and teaching environment to its
+38,000 students (FTEs) and 8,000 employees, and has an annual revenues
+of EUR 885 million. Learn more at
+[international.au.dk](https://www.international.au.dk/).*
