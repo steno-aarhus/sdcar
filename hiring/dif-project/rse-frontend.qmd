@@ -17,7 +17,7 @@ Aarhus](https://www.stenoaarhus.dk/) (SDCA), invites applications for
 one "research software engineer" position to work (in person or remote)
 with a team on a software and data engineering project, starting
 September 1 or as soon as possible thereafter. The position is full-time
-for up to 2 years (with the potential for extending it).
+for up to 2 years.
 
 As an employee at the Department of Clinical Medicine, you will be part
 of what is probably the largest health science research department in
