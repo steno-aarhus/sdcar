@@ -1,4 +1,4 @@
-Package: sdca.admin
+Package: sdcar
 Version: 0.0.1
 Encoding: UTF-8
 Depends: 
@@ -8,5 +8,7 @@ Imports:
     trelloR,
     lubridate,
     askpass,
-    glue
+    glue,
+    ghclass,
+    checkmate
 License: MIT + file LICENSE
