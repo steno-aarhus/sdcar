@@ -9,3 +9,4 @@ Imports:
     lubridate,
     askpass,
     glue
+License: MIT + file LICENSE
