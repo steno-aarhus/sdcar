@@ -35,7 +35,18 @@ upcoming_meetings <- meeting_dates %>%
           SUMMARY = "Steno Aarhus Epidemiology Group Monthly Meeting"
       )
 
-public_calendar_link <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
+
+tidy_ical <- function(path) {
+  path |>
+    calendar::ic_read() |>
+    dplyr::mutate(
+      DTSTART = lubridate::with_tz(lubridate::ymd_hms(DTSTART), "Europe/Copenhagen"),
+      DTEND = lubridate::with_tz(lubridate::ymd_hms(DTEND), "Europe/Copenhagen")
+    ) %>%
+    dplyr::arrange(DTSTART) %>%
+    dplyr::select(DTSTART, DTEND, SUMMARY)
+}
+
 current_calendar <- ic_read(public_calendar_link) %>%
   mutate(
     DTSTART = with_tz(ymd_hms(DTSTART), "Europe/Copenhagen"),
@@ -46,4 +57,18 @@ current_calendar <- ic_read(public_calendar_link) %>%
 
 new_calendar_data <- anti_join(upcoming_meetings, current_calendar)
 
-ic_write(ical(new_calendar_data), here::here("calendar.ics"))
+calendar::ic_write(
+  ic = calendar::ical(new_calendar_data),
+  file = fs::path_package("sdcar", "data", "calendar.ics")
+)
+
+save_old_calendar <- function() {
+public_calendar_link <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
+  ic_read(public_calendar_link) %>%
+    mutate(
+      DTSTART = with_tz(ymd_hms(DTSTART), "Europe/Copenhagen"),
+      DTEND = with_tz(ymd_hms(DTEND), "Europe/Copenhagen")
+    ) %>%
+    arrange(DTSTART) %>%
+    select(DTSTART, DTEND, SUMMARY)
+}
