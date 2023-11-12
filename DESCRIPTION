@@ -12,3 +12,4 @@ Imports:
     ghclass,
     checkmate
 License: MIT + file LICENSE
+Config/Needs/website: rmarkdown
