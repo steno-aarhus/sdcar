@@ -22,14 +22,14 @@ tr_auth_epi <- function() {
 #' Get the ID for a Trello board label.
 #'
 #' @param url The board URL.
-#' @param label The name of the board label you want the ID for.
+#' @param label_name The name of the board label you want the ID for.
 #' @param token The token obtained from [tr_auth_epi()].
 #'
 #' @return A character vector of the label ID.
 #'
-tr_get_board_label_id <- function(url = epi_board_url, label = "Meeting", token) {
-  trelloR::get_board_labels(board_url, token = token) |>
-    dplyr::filter(name == label) |>
+tr_get_board_label_id <- function(url = epi_board_url, label_name = "Meeting", token) {
+  trelloR::get_board_labels(url, token = token) |>
+    dplyr::filter(name == label_name) |>
     dplyr::pull(id)
 }
 
@@ -49,14 +49,14 @@ tr_read_card_template <- function() {
 
 #' Get the ID for a Trello board.
 #'
-#' @param name The name of the board you want the ID for.
+#' @param board_name The name of the board you want the ID for.
 #' @inheritParams tr_get_board_label_id
 #'
 #' @return A character vector of the board ID.
 #'
-tr_get_board_id <- function(url = epi_board_url, name = "Upcoming", token) {
-  trelloR::get_board_lists(board_url, token = token) |>
-    dplyr::filter(stringr::str_detect(name, name)) |>
+tr_get_board_id <- function(url = epi_board_url, board_name = "Upcoming", token) {
+  trelloR::get_board_lists(url, token = token) |>
+    dplyr::filter(stringr::str_detect(name, board_name)) |>
     dplyr::pull(id)
 }
 

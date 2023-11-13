@@ -7,16 +7,20 @@ epi_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dc
 #' @return A [tibble::tibble()].
 #'
 cal_read_ical <- function(ics) {
-  readr::read_lines(ics) |>
+  events_as_vector_items <- readr::read_lines(ics) |>
     # annoyingly have to do this processing because calendar::ic_read() doesn't work well
     stringr::str_c(collapse = "\n\n") |>
     stringr::str_replace_all("\n ", " ") |>
     stringr::str_split("\n\n") |>
-    unlist() |>
+    unlist()
+
+  events_as_tibble <- events_as_vector_items |>
     calendar::ic_list() |>
     purrr::map(calendar::ic_vector) |>
-    purrr::map(tibble::as_tibble) |>
-    purrr::list_rbind() |>
+    purrr::map(dplyr::bind_rows) |>
+    purrr::list_rbind()
+
+  events_as_tibble |>
     dplyr::mutate(dplyr::across(
       tidyselect::matches("VALUE=DATE"),
       lubridate::as_date
@@ -79,7 +83,7 @@ cal_append_current <- function(data, calendar_url = epi_calendar_url) {
     dplyr::select(DTSTART, DTEND, SUMMARY)
 
   data |>
-    dplyr::anti_join(current_calendar)
+    dplyr::anti_join(current_calendar, by = dplyr::join_by(DTSTART, DTEND, SUMMARY))
 }
 
 #' Save data as a file in the iCal format.
