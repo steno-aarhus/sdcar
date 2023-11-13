@@ -28,8 +28,8 @@ tr_auth_epi <- function() {
 #' @return A character vector of the label ID.
 #'
 tr_get_board_label_id <- function(url = epi_board_url, label = "Meeting", token) {
-  trelloR::get_board_labels(board_url, token = token) %>%
-    dplyr::filter(name == label) %>%
+  trelloR::get_board_labels(board_url, token = token) |>
+    dplyr::filter(name == label) |>
     dplyr::pull(id)
 }
 

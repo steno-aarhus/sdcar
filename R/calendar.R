@@ -7,27 +7,28 @@ epi_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dc
 #' @return A [tibble::tibble()].
 #'
 cal_read_ical <- function(ics) {
-  readr::read_lines(ics) %>%
+  readr::read_lines(ics) |>
     # annoyingly have to do this processing because calendar::ic_read() doesn't work well
-    stringr::str_c(collapse = "\n\n") %>%
-    stringr::str_replace_all("\n ", " ") %>%
-    stringr::str_split("\n\n") %>%
-    unlist() %>%
-    calendar::ic_list() %>%
-    purrr::map(calendar::ic_vector) %>%
+    stringr::str_c(collapse = "\n\n") |>
+    stringr::str_replace_all("\n ", " ") |>
+    stringr::str_split("\n\n") |>
+    unlist() |>
+    calendar::ic_list() |>
+    purrr::map(calendar::ic_vector) |>
+    purrr::map(tibble::as_tibble) |>
     purrr::list_rbind() |>
     dplyr::mutate(dplyr::across(
       tidyselect::matches("VALUE=DATE"),
       lubridate::as_date
-    )) %>%
+    )) |>
     dplyr::mutate(dplyr::across(
       tidyselect::matches("^(DTSTART|DTEND)$"),
       lubridate::as_datetime
-    )) %>%
+    )) |>
     dplyr::mutate(
       DTSTART = lubridate::with_tz(lubridate::ymd_hms(DTSTART), "Europe/Copenhagen"),
       DTEND = lubridate::with_tz(lubridate::ymd_hms(DTEND), "Europe/Copenhagen")
-    ) %>%
+    ) |>
     dplyr::arrange(DTSTART)
 }
 
@@ -74,7 +75,7 @@ cal_set_epi_meeting_details <- function(data) {
 #' @return A [tibble::tibble()].
 #'
 cal_append_current <- function(data, calendar_url = epi_calendar_url) {
-  current_calendar <- cal_read_ical(calendar_url) %>%
+  current_calendar <- cal_read_ical(calendar_url) |>
     dplyr::select(DTSTART, DTEND, SUMMARY)
 
   data |>

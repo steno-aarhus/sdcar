@@ -1,4 +1,3 @@
-
 add_user_to_org <- function(username) {
   checkmate::assert_character(username)
   ghclass::org_invite("steno-aarhus", username)
