@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+PRODID:ATFutures/calendar
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ical-24cb5076-51ec-4c15-a6ea-8d1c1d66e1e9
+DTSTART:20240108T130000
+DTEND:20240108T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-2722b2b8-706d-4a61-9435-ba7c9bcaaeeb
+DTSTART:20240205T130000
+DTEND:20240205T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-cff2affc-b4d0-4856-a668-214b1acd20d6
+DTSTART:20240304T130000
+DTEND:20240304T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-dea6c193-b4c7-4d54-a8fd-68c273c83a5d
+DTSTART:20240308T130000
+DTEND:20240308T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-0c550805-1461-4727-b5b6-cf3df8ff7a96
+DTSTART:20240506T130000
+DTEND:20240506T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-ce5f7acd-8671-4cab-b853-7f9d5a44a0f0
+DTSTART:20240603T130000
+DTEND:20240603T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-e7e01821-cf6d-4550-9893-22d499bd3362
+DTSTART:20240701T130000
+DTEND:20240701T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-0619eed7-e1c4-47a0-b554-ac44931046cc
+DTSTART:20240902T130000
+DTEND:20240902T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-943dedd0-79e7-40eb-843c-93ca9cccfead
+DTSTART:20241007T130000
+DTEND:20241007T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-276e33ea-8537-4bef-af03-bcf1095d976d
+DTSTART:20241104T130000
+DTEND:20241104T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+BEGIN:VEVENT
+UID:ical-3f6a17ae-c399-478d-b47e-eb6a43fc029d
+DTSTART:20241202T130000
+DTEND:20241202T150000
+DESCRIPTION:Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group
+SUMMARY:Steno Aarhus Epidemiology Group Monthly Meeting
+END:VEVENT
+END:VCALENDAR
