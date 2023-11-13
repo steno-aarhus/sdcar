@@ -11,6 +11,7 @@ Imports:
     glue,
     ghclass,
     checkmate,
-    rprojroot
+    rprojroot,
+    whisker
 License: MIT + file LICENSE
 Config/Needs/website: rmarkdown
