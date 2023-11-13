@@ -1,4 +1,4 @@
-public_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
+epi_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
 
 #' Read in a iCal file or URL
 #'
@@ -73,7 +73,7 @@ cal_set_epi_meeting_details <- function(data) {
 #'
 #' @return A [tibble::tibble()].
 #'
-cal_append_current <- function(data, calendar_url = public_calendar_url) {
+cal_append_current <- function(data, calendar_url = epi_calendar_url) {
   current_calendar <- cal_read_ical(calendar_url) %>%
     dplyr::select(DTSTART, DTEND, SUMMARY)
 
