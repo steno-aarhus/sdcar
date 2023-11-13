@@ -1,7 +1,12 @@
+public_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
 
-public_calendar_link <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dcbbrj230s8%40group.calendar.google.com/public/basic.ics"
-
-read_ical <- function(ics) {
+#' Read in a iCal file or URL
+#'
+#' @param ics A file or URL that is in the `.ics` format.
+#'
+#' @return A [tibble::tibble()].
+#'
+cal_read_ical <- function(ics) {
   readr::read_lines(ics) %>%
     # annoyingly have to do this processing because calendar::ic_read() doesn't work well
     stringr::str_c(collapse = "\n\n") %>%
@@ -11,10 +16,14 @@ read_ical <- function(ics) {
     calendar::ic_list() %>%
     purrr::map(calendar::ic_vector) %>%
     purrr::list_rbind() |>
-    dplyr::mutate(dplyr::across(tidyselect::matches("VALUE=DATE"),
-                                lubridate::as_date)) %>%
-    dplyr::mutate(dplyr::across(tidyselect::matches("^(DTSTART|DTEND)$"),
-                                lubridate::as_datetime)) %>%
+    dplyr::mutate(dplyr::across(
+      tidyselect::matches("VALUE=DATE"),
+      lubridate::as_date
+    )) %>%
+    dplyr::mutate(dplyr::across(
+      tidyselect::matches("^(DTSTART|DTEND)$"),
+      lubridate::as_datetime
+    )) %>%
     dplyr::mutate(
       DTSTART = lubridate::with_tz(lubridate::ymd_hms(DTSTART), "Europe/Copenhagen"),
       DTEND = lubridate::with_tz(lubridate::ymd_hms(DTEND), "Europe/Copenhagen")
@@ -22,55 +31,83 @@ read_ical <- function(ics) {
     dplyr::arrange(DTSTART)
 }
 
-# library(assertr)
-library(tidyverse)
-library(lubridate)
-library(calendar)
-library(glue)
-
-stop("This prevents accidentally sourcing the whole script.")
-
+#' Calculate next year.
+#'
+#' @return A numeric vector for the year.
+#'
 next_year <- function() {
   lubridate::year(lubridate::today()) + 1
 }
 
-meeting_dates_md <- tibble::tribble(
-  ~month, ~day,
-  "January", 8,
-  "February", 5,
-  "March", 4,
-  "March", 8,
-  "May", 6,
-  "June", 3,
-  "July", 1,
-  "September", 2,
-  "October", 7,
-  "November", 4,
-  "December", 2
-) %>%
-  dplyr::mutate(
-    year = next_year(),
-    date = lubridate::ymd(glue::glue("{year}-{month}-{day}"), tz = "Europe/Copenhagen"),
-    start_time = "13:00",
-    end_time = "15:00"
-  )
+#' Add calendar details for Epi Group meetings and standardize to the iCal format.
+#'
+#' @inheritParams cal_append_current
+#'
+#' @return A [tibble::tibble()].
+#'
+cal_set_epi_meeting_details <- function(data) {
+  upcoming <- data |>
+    dplyr::mutate(
+      year = next_year(),
+      date = lubridate::ymd(glue::glue("{year}-{month}-{day}"), tz = "Europe/Copenhagen"),
+      start_time = "13:00",
+      end_time = "15:00"
+    )
 
-upcoming_meetings <- meeting_dates_md %>%
-  dplyr::transmute(
-    UID = purrr::map_chr(1:dplyr::n(), ~ calendar::ic_guid()),
-    DTSTART = lubridate::ymd_hm(glue::glue("{date} {start_time}"), tz = "Europe/Copenhagen"),
-    DTEND = lubridate::ymd_hm(glue::glue("{date} {end_time}"), tz = "Europe/Copenhagen"),
-    # To show up as the event description
-    DESCRIPTION = "Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group",
-    # To show up as the event title
-    SUMMARY = "Steno Aarhus Epidemiology Group Monthly Meeting"
-  )
+  upcoming_meetings <- upcoming |>
+    dplyr::transmute(
+      UID = purrr::map_chr(1:dplyr::n(), ~ calendar::ic_guid()),
+      DTSTART = lubridate::ymd_hm(glue::glue("{date} {start_time}"), tz = "Europe/Copenhagen"),
+      DTEND = lubridate::ymd_hm(glue::glue("{date} {end_time}"), tz = "Europe/Copenhagen"),
+      # To show up as the event description
+      DESCRIPTION = "Details about the meeting are found on the Trello board: https://trello.com/b/ipcYGXhC/epidemiology-group",
+      # To show up as the event title
+      SUMMARY = "Steno Aarhus Epidemiology Group Monthly Meeting"
+    )
+}
 
-current_calendar <- read_ical(public_calendar_link) %>%
-  dplyr::select(DTSTART, DTEND, SUMMARY)
+#' Add the current calendar to the upcoming calendar.
+#'
+#' @param data Data with columns that match standard iCal format.
+#' @param calendar_url The URL to the `.ics` file.
+#'
+#' @return A [tibble::tibble()].
+#'
+cal_append_current <- function(data, calendar_url = public_calendar_url) {
+  current_calendar <- cal_read_ical(calendar_url) %>%
+    dplyr::select(DTSTART, DTEND, SUMMARY)
 
-new_calendar_data <- dplyr::anti_join(upcoming_meetings, current_calendar)
+  data |>
+    dplyr::anti_join(current_calendar)
+}
 
-calendar::ic_write(calendar::ical(new_calendar_data),
-                   here::here("inst/calendar.ics"))
+#' Save data as a file in the iCal format.
+#'
+#' File is saved to `inst/calendar.ics`.
+#'
+#' @inheritParams cal_append_current
+#'
+#' @return A file.
+#'
+cal_write_ical <- function(data) {
+  output_ics <- rprojroot::find_package_root_file("inst", "calendar.ics")
+  data |>
+    calendar::ical() |>
+    calendar::ic_write(
+      file = output_ics
+    )
+}
 
+#' Update the Epi Group calendar with upcoming meetings.
+#'
+#' @param data Upcoming meetings for the Epi Group.
+#'
+#' @return A `.ics` file of upcoming meetings.
+#' @export
+#'
+update_epi_calendar_meetings <- function(data) {
+  data |>
+    cal_set_epi_meeting_details() |>
+    cal_append_current() |>
+    cal_write_ical()
+}

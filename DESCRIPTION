@@ -10,6 +10,7 @@ Imports:
     askpass,
     glue,
     ghclass,
-    checkmate
+    checkmate,
+    rprojroot
 License: MIT + file LICENSE
 Config/Needs/website: rmarkdown
