@@ -1,5 +1,5 @@
 ---
-title: "epi-group"
+title: "Epi Group admin"
 ---
 
 ```{r, include = FALSE}
@@ -11,4 +11,36 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(sdcar)
+```
+
+## Add upcoming meeting dates to calendar
+
+```{r}
+upcoming_meetings <- tibble::tribble(
+  ~month, ~day,
+  "January", 8,
+  "February", 5,
+  "March", 4,
+  "March", 8,
+  "May", 6,
+  "June", 3,
+  "July", 1,
+  "September", 2,
+  "October", 7,
+  "November", 4,
+  "December", 2
+)
+```
+
+```{r}
+upcoming_meetings |>
+  update_epi_calendar_meetings()
+```
+
+## Add upcoming meeting dates to Trello
+
+```{r}
+token <- tr_auth_epi()
+upcoming_meetings |>
+  update_epi_trello_meetings(token = token)
 ```
