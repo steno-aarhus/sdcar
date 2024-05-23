@@ -44,3 +44,23 @@ token <- tr_auth_epi()
 upcoming_meetings |>
   update_epi_trello_meetings(token = token)
 ```
+
+```{r}
+library(trelloR)
+library(tidyverse)
+trelloR::get_board_lists(epi_board_url, token = token) |> View()
+upcoming_meetings <- trelloR::get_board_cards(epi_board_url, token = token) |> 
+  dplyr::filter(idList == "63ecd98a84316358a8be28e4") |> 
+  select(name, desc) |> 
+  mutate(file_name = str_replace_all(name, " ", "-")) 
+
+upcoming_meetings |> 
+  pwalk(\(name, desc, file_name) write_file(desc, here::here("inst", str_c(file_name, ".md"))))
+
+project_path <- here::here("inst")
+upcoming_meetings |>
+glue::glue_data("gh issue create --project 'Epidemiology group meetings' --title '{name}' --body-file '{project_path}/{file_name}.md' --label 'spaces' --repo 'steno-aarhus/epi'") |>
+  walk(\(x) {Sys.sleep(0.5)
+       system(x)})
+
+```
