@@ -116,3 +116,6 @@ update_epi_calendar_meetings <- function(data) {
     cal_append_current() |>
     cal_write_ical()
 }
+
+# x <- seq(ymd("2010-01-01"),ymd("2015-12-31"),by="1 day")
+# x[wday(x,label = TRUE) == "Mon" & day(x) <= 7]
