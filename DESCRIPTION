@@ -10,7 +10,8 @@ Imports:
     glue,
     ghclass,
     checkmate,
-    rprojroot
+    rprojroot,
+    processx
 License: MIT + file LICENSE
 Config/Needs/website: rmarkdown
 RoxygenNote: 7.2.3
