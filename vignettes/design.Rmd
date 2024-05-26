@@ -1,0 +1,72 @@
+---
+title: "Design"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Design}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Principles
+
+-   Wherever possible, output a tibble, otherwise a vector.
+
+## Naming scheme
+
+### GitHub (`gh`)
+
+-   Objects: users, teams, issues, issue templates, projects, repos,
+    labels
+-   Actions: get, add, create, remove, as, verify
+
+Functions:
+
+``` r
+gh_get_users()
+gh_get_teams()
+gh_get_repos()
+gh_get_projects()
+gh_get_issues(repo)
+gh_get_issue_templates(repo)
+gh_get_labels(repo)
+
+gh_add_to_org(username)
+gh_add_to_team(username, team)
+gh_add_to_issue(username, repo, number)
+
+gh_create_team(name)
+gh_create_issue(repo, title, body, assignee, template, label, projects)
+
+gh_remove_from_org(username)
+gh_remove_from_team(username, team)
+
+gh_verify()
+gh_as_repo(repo)
+```
+
+### Epi Group Meetings (`epi`)
+
+-   Objects: meetings, calendar, dates
+-   Actions: get, create, update
+
+Functions:
+
+``` r
+epi_get_calendar(url)
+epi_get_meetings()
+
+epi_create_dates()
+epi_create_meetings(dates)
+
+epi_update_calendar(url, data)
+```
+
+### General
+
+-   Objects: gh
+-   Actions: verify
+
+``` r
+gh_verify()
+```
+
