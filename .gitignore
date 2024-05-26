@@ -4,3 +4,4 @@
 .Ruserdata
 .Rbuildignore
 *.swp
+inst/doc
