@@ -3,5 +3,6 @@
 export(cal_create_event)
 export(epi_add_sessions)
 export(epi_create_session_issues)
+export(epi_get_calendar)
 export(gh_create_issue)
 export(read_ical)

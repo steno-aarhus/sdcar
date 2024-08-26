@@ -7,13 +7,14 @@ epi_calendar_url <- "https://calendar.google.com/calendar/ical/086okoggkv7c4b0dc
 #' @param path The path or URL to the file that is in the `.ics` format.
 #'
 #' @return A [tibble::tibble()].
+#' @export
 #'
 #' @examples
 #' \dontrun{
 #' epi_get_calendar()
 #' }
 epi_get_calendar <- function(path = epi_calendar_url) {
-
+  read_ical(path)
 }
 
 # Create ------------------------------------------------------------------
