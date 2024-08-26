@@ -13,50 +13,46 @@ vignette: >
 
 ## Naming scheme
 
+### Calendar (`cal`)
+
+-   Objects:
+    -   events: In calendar terms, an event is an activity with a start
+        and end date and time in a calendar.
+    -   ical: The iCal format is a standard for calendar data exchange.
+-   Actions:
+    -   read: Reading from a file or URL.
+    -   create: Creating a new event.
+    -   write: Writing to a file.
+
 ### GitHub (`gh`)
 
 -   Objects: users, teams, issues, issue templates, projects, repos,
     labels
 -   Actions: get, add, create, remove, as, verify
 
-Functions:
+Functions to be developed based on naming scheme:
 
 ``` r
-gh_get_users()
-gh_get_teams()
-gh_get_repos()
-gh_get_projects()
-gh_get_issues(repo)
-gh_get_issue_templates(repo)
-gh_get_labels(repo)
-
-gh_add_to_org(username)
-gh_add_to_team(username, team)
-gh_add_to_issue(username, repo, number)
-
 gh_create_team(name)
-gh_create_issue(repo, title, body, assignee, template, label, projects)
-
 gh_remove_from_org(username)
 gh_remove_from_team(username, team)
-
-gh_verify()
-gh_as_repo(repo)
 ```
 
 ### Epi Group Meetings (`epi`)
 
--   Objects: meetings, calendar, dates
+-   Objects:
+    -   sessions: Sessions are the regular (monthly) events of the
+        group.
+    -   calendar: This is the Epidemiology specific calendar.
+    -   GitHub session issues: These are the issues created for each
+        session.
 -   Actions: get, create, update
 
 Functions:
 
 ``` r
-epi_get_calendar(url)
-epi_get_meetings()
-
 epi_create_dates()
-epi_create_meetings(dates)
+epi_create_meeting_issues(dates)
 
 epi_update_calendar(url, data)
 ```
@@ -65,8 +61,3 @@ epi_update_calendar(url, data)
 
 -   Objects: gh
 -   Actions: verify
-
-``` r
-gh_verify()
-```
-
