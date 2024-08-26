@@ -13,21 +13,102 @@ knitr::opts_chunk$set(
 library(sdcar)
 ```
 
-## Add upcoming meeting dates to calendar
+This document details the uses of this package for managing the main
+activities Steno Aarhus Epidemiology Group. Presently, there are two
+main tasks for managing the group:
+
+-   Maintaining the calendar that people subscribe to in order to be
+    informed about upcoming events. This mainly includes adding new
+    events to the existing calendar.
+-   Adding upcoming events to the Epi group's GitHub Project Board as
+    GitHub Issues.
+
+## Maintaining the calendar
+
+Right now, we have one calendar that we use to inform people about the
+regular sessions we hold. This calendar is stored on the sdcar's GitHub
+repo as an `.ics` iCal file, which people can use to subscribe to so
+that they keep updated on these sessions.
+
+To get the calendar details, use:
 
 ```{r}
-upcoming_meetings <- tibble::tribble(
-  ~month, ~day,
-  "January", 8,
-  "February", 5,
-  "March", 4,
-  "March", 8,
-  "May", 6,
-  "June", 3,
-  "July", 1,
-  "September", 2,
-  "October", 7,
-  "November", 4,
-  "December", 2
+current_sessions <- epi_get_calendar(epi_calendar_url)
+current_sessions
+```
+
+To add events to the calendar, you need to create a datetime character
+vector of the upcoming dates and their starting time. Because working
+with dates can be tricky, we recommend using the
+`lubridate::as_datetime()` function for this, along with explicitly
+setting the timezone:
+
+```{r}
+upcoming_sessions <- lubridate::as_datetime(c(
+  "2024-01-06 13:00:00",
+  "2024-02-03 13:00:00",
+  "2024-03-03 13:00:00",
+  "2024-03-31 13:00:00",
+  "2024-05-05 13:00:00",
+  "2024-06-02 13:00:00",
+  "2024-09-01 13:00:00",
+  "2024-10-06 13:00:00",
+  "2024-11-03 13:00:00",
+  "2024-12-01 13:00:00"
+), tz = "Europe/Copenhagen")
+upcoming_sessions
+```
+
+Then use this function to add the events to the calendar (without
+updating the calendar file just yet). Since all the regular sessions are
+by default 2 hours, we can add two hours to the end date of the upcoming
+dates and it gives the end time for the sessions.
+
+```{r}
+upcoming_events <- epi_create_sessions(
+  start = upcoming_sessions,
+  end = upcoming_sessions + lubridate::hours(2)
 )
+```
+
+If you want to create an event that isn't the regular sessions, use:
+
+```{r}
+conference_event <- cal_create_event(
+  start = lubridate::now(),
+  end = lubridate::now() + lubridate::hours(1),
+  title = "Conference",
+  description = "Cool conference!"
+)
+
+current_sessions |>
+  epi_add_sessions(conference_event)
+```
+
+Once these dates are created, we need to add them to the existing
+calendar. While you could overwrite the existing calendar with these new
+dates, it is nice to have a record of all the past sessions in the
+calendar. So what we need to do is join the current calendar with these
+new events.
+
+```{r}
+updated_calendar <- current_sessions |>
+  epi_add_sessions(upcoming_events)
+```
+
+To save this back to a file, we'll use the `write_ical()` function:
+
+```{r, eval=FALSE}
+updated_calendar |>
+  write_ical("inst/epi-calendar.ics")
+```
+
+## Maintaining the GitHub Project Board
+
+The second task is to add the upcoming sessions to the GitHub Project.
+Thankfully, it is a bit easier to do than updating the calendar.
+
+```{r, eval=FALSE}
+upcoming_sessions |>
+  epi_create_session_issues()
 ```
