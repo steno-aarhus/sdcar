@@ -44,6 +44,7 @@ cal_create_event <- function(start, end, title, description) {
 #' @param path The path to the output file.
 #'
 #' @return A file.
+#' @export
 #'
 write_ical <- function(data, path = NA) {
   if (is.na(path)) {
