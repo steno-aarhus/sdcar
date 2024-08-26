@@ -103,13 +103,33 @@ gh_add_to_issue <- function(username, repo, number) {
 
 # gh_create_team(name)
 
+#' Create a new GitHub issue on the SDCA GitHub organization.
+#'
+#' @param repo The name of the repo in the SDCA GitHub organization.
+#' @param title The title to give the new issue.
+#' @param body The content of the issue itself.
+#' @param assignee Who to assign the issue.
+#' @param template Which template to use for the issue's body.
+#' @param label The label to give the issue.
+#' @param project The Project Board to add the issue to.
+#'
+#' @return A GitHub JSON response object.
+#' @export
+#'
 gh_create_issue <- function(repo, title, body = NA, assignee = NA, template = NA, label = NA, project = NA) {
-  browser()
   repo <- rlang::arg_match(repo, gh_get_repos())
-  assignee <- rlang::arg_match(assignee, c(NA, gh_get_users()))
-  template <- rlang::arg_match(template, c(NA, gh_get_issue_templates(repo)))
-  label <- rlang::arg_match(label, c(NA, gh_get_labels(repo)))
-  project <- rlang::arg_match(project, c(NA, gh_get_projects()$number))
+  if (!is.na(assignee)) {
+    assignee <- rlang::arg_match(assignee, c(gh_get_users()))
+  }
+  if (!is.na(template)) {
+    template <- rlang::arg_match(template, c(gh_get_issue_templates(repo)))
+  }
+  if (!is.na(label)) {
+    label <- rlang::arg_match(label, c(gh_get_labels(repo)))
+  }
+  if (!is.na(project)) {
+    project <- rlang::arg_match(project, as.character(gh_get_projects()$number))
+  }
 
   arguments <- c(
     "issue",
@@ -119,23 +139,21 @@ gh_create_issue <- function(repo, title, body = NA, assignee = NA, template = NA
   )
 
   extra_arguments <- list(
-   "--body" = body,
-   "--assignee" = assignee,
-   "--template" = template,
-   "--label" = label,
-   "--project" = project
+    "--body" = body,
+    "--assignee" = assignee,
+    "--template" = template,
+    "--label" = label,
+    "--project" = project
   ) |>
-    purrr::compact() |>
-    purrr::imap(\(x, y) c(x, y))
+    purrr::discard(is.na) |>
+    purrr::imap(\(x, y) c(y, x)) |>
+    unlist(use.names = FALSE)
 
   processx::run(
     "gh",
     c(
-      "--body", body,
-      "--assignee", assignee,
-      "--template", template,
-      "--label", label,
-      "--project", project
+      arguments,
+      extra_arguments
     )
   )
 }
@@ -147,10 +165,12 @@ gh_create_issue <- function(repo, title, body = NA, assignee = NA, template = NA
 
 # Helper functions --------------------------------------------------------
 
-gh_verify <- function() {
+gh_verify <- function(call = rlang::caller_env()) {
   output <- processx::run("which", "gh")$status
   if (!length(output)) {
-    rlang::abort("Please install the GitHub CLI (gh) before proceeding.")
+    rlang::abort("Please install the GitHub CLI (gh) before proceeding.",
+      call = call
+    )
   }
   return(invisible())
 }
