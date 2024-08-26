@@ -1,0 +1,94 @@
+#' Create a tibble with an iCal event.
+#'
+#' @param start The datetime of when the event starts. Must be `POSIXct` or similar, recommended to use [lubridate::as_datetime()] to correctly format the date.
+#' @param end The datetime of when the event ends. See `start` for formatting recommendations.
+#' @param title The title shown in the calendar event.
+#' @param description A description that is shown in the calendar event.
+#'
+#' @return A single row of a [tibble::tibble()].
+#' @export
+#'
+#' @examples
+#' cal_create_event(
+#'   start = lubridate::as_datetime(lubridate::now()),
+#'   end = lubridate::now() + lubridate::hours(1),
+#'   title = "Meeting",
+#'   description = "Discussing the new project"
+#' )
+cal_create_event <- function(start, end, title, description) {
+  checkmate::assert_posixct(start)
+  checkmate::assert_scalar(start)
+  checkmate::assert_posixct(end)
+  checkmate::assert_scalar(end)
+  checkmate::assert_character(title)
+  checkmate::assert_scalar(title)
+  checkmate::assert_character(description)
+  checkmate::assert_scalar(description)
+
+  tibble::tibble(
+    UID = calendar::ic_guid(),
+    DTSTART = start,
+    DTEND = end,
+    # To show up as the event description
+    DESCRIPTION = description,
+    # To show up as the event title
+    SUMMARY = title
+  )
+}
+
+#' Save data as a file in the iCal format.
+#'
+#' File is saved to `inst/epi-calendar.ics`.
+#'
+#' @param data The [tibble::tibble()] that contains the events to save in iCal format.
+#' @param path The path to the output file.
+#'
+#' @return A file.
+#'
+write_ical <- function(data, path = NA) {
+  if (is.na(path)) {
+    path <- rprojroot::find_package_root_file("inst", "epi-calendar.ics")
+  }
+  data |>
+    calendar::ical() |>
+    calendar::ic_write(
+      file = path
+    )
+}
+
+#' Read in an iCal file as a tibble.
+#'
+#' @param path The path to the `.ics` file.
+#'
+#' @return A [tibble::tibble()].
+#' @export
+#'
+read_ical <- function(path) {
+  events_as_vector_items <- readr::read_lines(path) |>
+    # annoyingly have to do this processing because calendar::ic_read() doesn't work well
+    stringr::str_c(collapse = "\n\n") |>
+    stringr::str_replace_all("\n ", " ") |>
+    stringr::str_split("\n\n") |>
+    unlist()
+
+  events_as_tibble <- events_as_vector_items |>
+    calendar::ic_list() |>
+    purrr::map(calendar::ic_vector) |>
+    purrr::map(dplyr::bind_rows) |>
+    purrr::list_rbind()
+
+  events_as_tibble |>
+    dplyr::mutate(dplyr::across(
+      tidyselect::matches("VALUE=DATE"),
+      lubridate::as_date
+    )) |>
+    dplyr::mutate(dplyr::across(
+      tidyselect::matches("^(DTSTART|DTEND)$"),
+      lubridate::as_datetime
+    )) |>
+    dplyr::mutate(
+      DTSTART = lubridate::with_tz(lubridate::ymd_hms(DTSTART), "Europe/Copenhagen"),
+      DTEND = lubridate::with_tz(lubridate::ymd_hms(DTEND), "Europe/Copenhagen")
+    ) |>
+    dplyr::arrange(DTSTART)
+}
