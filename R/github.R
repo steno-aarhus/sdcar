@@ -57,6 +57,7 @@ gh_get_issues <- function(repo) {
 }
 
 gh_get_issue_templates <- function(repo) {
+  gh_verify()
   repo <- rlang::arg_match(repo, gh_get_repos())
   processx::run(
     "gh",
