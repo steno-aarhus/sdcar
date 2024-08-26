@@ -53,6 +53,7 @@ epi_create_session_issues <- function(dates) {
 #' @inheritParams cal_create_event
 #'
 #' @return A [tibble::tibble()].
+#' @export
 #'
 #' @examples
 #' upcoming <- lubridate::as_datetime(c(
