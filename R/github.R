@@ -70,9 +70,7 @@ gh_get_issue_templates <- function(repo) {
     stringr::str_split("\n") |>
     unlist() |>
     stringr::str_subset("\n$", negate = TRUE) |>
-    stringr::str_subset("ISSUE_TEMPLATE/") |>
-    fs::path_file() |>
-    fs::path_ext_remove()
+    stringr::str_subset("ISSUE_TEMPLATE/")
 }
 
 # Add ---------------------------------------------------------------------
