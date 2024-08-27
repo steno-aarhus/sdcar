@@ -164,6 +164,15 @@ gh_create_issue <- function(repo, title, body = NA, assignee = NA, template = NA
 
 # Helper functions --------------------------------------------------------
 
+gh_save_issue_template <- function(repo) {
+  template <- gh_get_issue_templates(repo)
+  url <- glue::glue("https://raw.githubusercontent.com/steno-aarhus/{repo}/main/{template}")
+  output_path <- rprojroot::find_package_root_file("inst", repo, fs::path_file(template))
+  fs::dir_create(fs::path_dir(output_path), recurse = TRUE)
+  readr::read_lines(url) |>
+    readr::write_lines(output_path)
+}
+
 gh_verify <- function(call = rlang::caller_env()) {
   output <- processx::run("which", "gh")$status
   if (!length(output)) {
