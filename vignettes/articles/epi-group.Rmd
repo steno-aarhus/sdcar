@@ -109,6 +109,7 @@ The second task is to add the upcoming sessions to the GitHub Project.
 Thankfully, it is a bit easier to do than updating the calendar.
 
 ```{r, eval=FALSE}
+# Hasn't been fully implemented yet.
 upcoming_sessions |>
   epi_create_session_issues()
 ```
