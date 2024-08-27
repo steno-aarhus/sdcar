@@ -11,7 +11,8 @@ Imports:
     ghclass,
     checkmate,
     rprojroot,
-    processx
+    processx,
+    readr
 License: MIT + file LICENSE
 Config/Needs/website: rmarkdown
 RoxygenNote: 7.3.1
