@@ -115,34 +115,30 @@ gh_add_to_issue <- function(username, repo, number) {
 #' @return A GitHub JSON response object.
 #' @export
 #'
-gh_create_issue <- function(repo, title, body = NA, assignee = NA, template = NA, label = NA, project = NA) {
+#' @examples
+#' \dontrun{
+#' gh_create_issue("sdcar", "test 2", " ")
+#' }
+gh_create_issue <- function(repo, title, body, assignee = NA, label = NA) {
   repo <- rlang::arg_match(repo, gh_get_repos())
   if (!is.na(assignee)) {
     assignee <- rlang::arg_match(assignee, c(gh_get_users()))
   }
-  if (!is.na(template)) {
-    template <- rlang::arg_match(template, c(gh_get_issue_templates(repo)))
-  }
   if (!is.na(label)) {
     label <- rlang::arg_match(label, c(gh_get_labels(repo)))
-  }
-  if (!is.na(project)) {
-    project <- rlang::arg_match(project, as.character(gh_get_projects()$number))
   }
 
   arguments <- c(
     "issue",
     "create",
     "--repo", gh_as_repo(repo),
-    "--title", title
+    "--title", title,
+    "--body", body
   )
 
   extra_arguments <- list(
-    "--body" = body,
     "--assignee" = assignee,
-    "--template" = template,
-    "--label" = label,
-    "--project" = project
+    "--label" = label
   ) |>
     purrr::discard(is.na) |>
     purrr::imap(\(x, y) c(y, x)) |>
