@@ -32,8 +32,31 @@ cal_create_event <- function(start, end, title, description) {
     # To show up as the event description
     DESCRIPTION = description,
     # To show up as the event title
-    SUMMARY = title
+    SUMMARY = title,
+    # The below are standard iCal fields
+    TRANSP = "OPAQUE",
+    STATUS = "CONFIRMED",
+    SEQUENCE = "0",
+    CREATED = cal_timestamp(),
+    `LAST-MODIFIED` = cal_timestamp(),
+    DTSTAMP = cal_timestamp()
   )
+}
+
+cal_timestamp <- function() {
+  cal_datetime(lubridate::now())
+}
+
+#' Convert a date or datetime object to an iCal timestamp.
+#'
+#' @param date A datetime object.
+#'
+#' @return A character vector.
+#'
+#' @examples
+#' cal_datetime(lubridate::now())
+cal_datetime <- function(date) {
+  lubridate::as_datetime(date, tz = "Europe/Copenhagen")
 }
 
 #' Save data as a file in the iCal format.
@@ -46,12 +69,13 @@ cal_create_event <- function(start, end, title, description) {
 #' @return A file.
 #' @export
 #'
-write_ical <- function(data, path = NA) {
+write_ical <- function(data, path = NA, header = NA) {
   if (is.na(path)) {
-    path <- rprojroot::find_package_root_file("inst", "epi-calendar.ics")
+    path <- rprojroot::find_package_root_file("inst", "calendar.ics")
   }
+
   data |>
-    calendar::ical() |>
+    calendar::ical(ic_attributes = header) |>
     calendar::ic_write(
       file = path
     )
@@ -63,6 +87,10 @@ write_ical <- function(data, path = NA) {
 #'
 #' @return A [tibble::tibble()].
 #' @export
+#'
+#' @examples
+#'
+#' read_ical(here::here("inst/calendar.ics"))
 #'
 read_ical <- function(path) {
   events_as_vector_items <- readr::read_lines(path) |>
@@ -80,16 +108,19 @@ read_ical <- function(path) {
 
   events_as_tibble |>
     dplyr::mutate(dplyr::across(
+      tidyselect::everything(),
+      \(x) {
+        x <- dplyr::na_if(x, "NATNA")
+        dplyr::na_if(x, "NA")
+      }
+    )) |>
+    dplyr::mutate(dplyr::across(
       tidyselect::matches("VALUE=DATE"),
       lubridate::as_date
     )) |>
     dplyr::mutate(dplyr::across(
-      tidyselect::matches("^(DTSTART|DTEND)$"),
-      lubridate::as_datetime
+      tidyselect::matches("^(DTSTART|DTEND|CREATED|LAST-MODIFIED|DTSTAMP)$"),
+      cal_datetime
     )) |>
-    dplyr::mutate(
-      DTSTART = lubridate::with_tz(lubridate::ymd_hms(DTSTART), "Europe/Copenhagen"),
-      DTEND = lubridate::with_tz(lubridate::ymd_hms(DTEND), "Europe/Copenhagen")
-    ) |>
     dplyr::arrange(DTSTART)
 }
