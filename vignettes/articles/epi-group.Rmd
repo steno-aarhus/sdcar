@@ -34,6 +34,7 @@ To get the calendar details, use:
 
 ```{r}
 current_sessions <- epi_get_calendar(epi_calendar_url)
+current_sessions <- epi_get_calendar(here::here("inst/calendar.ics"))
 current_sessions
 ```
 
@@ -45,16 +46,8 @@ setting the timezone:
 
 ```{r}
 upcoming_sessions <- lubridate::as_datetime(c(
-  "2024-01-06 13:00:00",
-  "2024-02-03 13:00:00",
-  "2024-03-03 13:00:00",
-  "2024-03-31 13:00:00",
-  "2024-05-05 13:00:00",
-  "2024-06-02 13:00:00",
-  "2024-09-01 13:00:00",
-  "2024-10-06 13:00:00",
-  "2024-11-03 13:00:00",
-  "2024-12-01 13:00:00"
+  "2025-01-06 13:00:00",
+  "2025-12-01 13:00:00"
 ), tz = "Europe/Copenhagen")
 upcoming_sessions
 ```
@@ -100,7 +93,8 @@ To save this back to a file, we'll use the `write_ical()` function:
 
 ```{r, eval=FALSE}
 updated_calendar |>
-  write_ical("inst/epi-calendar.ics")
+  epi_write_ical(here::here("inst/calendar.ics"))
+
 ```
 
 ## Maintaining the GitHub Project Board
@@ -109,7 +103,6 @@ The second task is to add the upcoming sessions to the GitHub Project.
 Thankfully, it is a bit easier to do than updating the calendar.
 
 ```{r, eval=FALSE}
-# Hasn't been fully implemented yet.
 upcoming_sessions |>
   epi_create_session_issues()
 ```
