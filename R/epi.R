@@ -27,11 +27,11 @@ epi_get_calendar <- function(path = epi_calendar_url) {
 #' @export
 #'
 epi_create_session_issues <- function(dates) {
-  rlang::abort("Hasn't been fully implemented yet.")
   checkmate::assert_posixct(dates)
   template <- gh_get_issue_templates("epi")
   url <- glue::glue("https://raw.githubusercontent.com/steno-aarhus/epi/main/{template}")
-  body <- readr::read_lines(url)
+  body <- readr::read_lines(url, skip = 7) |>
+    paste(collapse = "\n")
   purrr::walk(
     lubridate::ymd(lubridate::as_date(dates)),
     \(date) {
