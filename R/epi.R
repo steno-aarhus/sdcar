@@ -80,6 +80,28 @@ epi_create_sessions <- function(start, end) {
     purrr::list_rbind()
 }
 
+# Write -------------------------------------------------------------------
+
+#' Write the iCalendar for the Epi group to a file.
+#'
+#' @param data The [tibble::tibble()] that contains the events to save in iCal format.
+#' @param path The path to the output file.
+#'
+#' @return Writes the iCal to a file.
+#' @export
+#'
+epi_write_ical <- function(data, path) {
+  ical_header <- calendar::ic_attributes_vec(ical_example)
+  ical_header["X-WR-CALNAME"] <- "Epi Group Meetings"
+  ical_header["X-WR-TIMEZONE"] <- "Europe/Copenhagen"
+  ical_header <- c(
+    ical_header,
+    "REFRESH-INTERVAL;VALUE=DURATION" = "P1D",
+    "NAME" = "Epi Group Meetings"
+  )
+  write_ical(data, path, header = ical_header)
+}
+
 # Helpers -----------------------------------------------------------------
 
 #' Add new events to the current calendar.
