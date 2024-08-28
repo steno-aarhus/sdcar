@@ -69,7 +69,7 @@ cal_datetime <- function(date) {
 #' @return A file.
 #' @export
 #'
-write_ical <- function(data, path = NA, header = NA) {
+write_ical <- function(data, path = NA, header = NULL) {
   if (is.na(path)) {
     path <- rprojroot::find_package_root_file("inst", "calendar.ics")
   }
