@@ -1,5 +1,7 @@
 # sdcar: Steno Diabetes Center Aarhus Admin with R
 
+**NOTE: This is deprecated and no longer used**
+
 <!-- badges: start -->
 
 <!-- badges: end -->
